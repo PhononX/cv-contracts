@@ -1,20 +1,52 @@
-name: Node.js Package
+name: Build and Deploy into NPM
 
 on:
-  release:
-    types: [created]
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
-  build:
+  build-and-publish:
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.x, 16.x]
+
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
         with:
-          node-version: "14"
-          registry-url: "https://registry.npmjs.org"
-      - run: npm ci
-      - run: npm run build
-      - run: npm publish
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build the project
+        run: npm run build
+
+      - name: Publish to npm
+        if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+        run: npm publish
         env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Create a GitHub release
+        if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+        uses: actions/create-release@v1
+        with:
+          tag_name: v${{ github.sha }}
+          release_name: Release ${{ github.sha }}
+          body: |
+            New release for commit ${{ github.sha }}.
+            - Built and published to npm
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
