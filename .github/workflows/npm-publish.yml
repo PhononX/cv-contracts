@@ -31,8 +31,6 @@ jobs:
       - name: Build the project
         run: npm run build
 
-      - name: Test1
-        run: "echo ${secrets.NPM_TOKEN}"
       - name: Test2
         run: "echo ${{secrets.NPM_TOKEN}}"        
 
