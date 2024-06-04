@@ -31,14 +31,13 @@ jobs:
       - name: Build the project
         run: npm run build
 
-      - name: Test2
-        run: "echo ${{secrets.NPM_TOKEN}}"        
+      - name: Configure npm for publishing
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
 
       - name: Publish to npm
         if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
         run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Create a GitHub release
         if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
