@@ -1,0 +1,29 @@
+{
+  "name": "@cv/contracts",
+  "version": "1.0.0",
+  "description": "Carbon Voice Contracts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rimraf ./dist",
+    "lint": "eslint --fix -c .eslintrc.js src/ --ext .ts",
+    "build": "npm run clean && npm run lint && npx tsc",
+    "prepare": "npm run build"
+  },
+  "keywords": ["cv-contracts", "carbon-voice-contracts", "contracts", "carbon-voice"],
+  "author": "Carbon Voice",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^14",
+    "@typescript-eslint/eslint-plugin": "^7.9.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "eslint-plugin-simple-import-sort": "^12.1.0",
+    "eslint-plugin-unused-imports": "^3.2.0",
+    "prettier": "^3.2.5",
+    "rimraf": "^5.0.7",
+    "typescript": "^4.9.4"
+  }
+}

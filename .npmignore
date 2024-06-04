@@ -1,0 +1,14 @@
+# folders
+.github/*
+.git/*
+.vscode/*
+node_modules
+.vscode/
+dist/
+
+# files
+.editorconfig
+.eslintignore
+.eslintrc.json
+.gitignore
+.npmignore
