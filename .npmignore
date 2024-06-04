@@ -5,10 +5,13 @@
 node_modules
 .vscode/
 dist/
+src/
 
 # files
 .editorconfig
 .eslintignore
-.eslintrc.json
+.eslintrc.js
 .gitignore
 .npmignore
+.prettierrc
+tsconfig.json
