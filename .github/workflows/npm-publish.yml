@@ -48,14 +48,18 @@ jobs:
         if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
         run: npm publish
 
+      - name: Get version
+        id: package
+        run: echo "::set-output name=version::$(jq -r .version package.json)"        
+
       - name: Create a GitHub release
         if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
         uses: actions/create-release@v1
         with:
-          tag_name: v${{ github.sha }}
-          release_name: Release ${{ github.sha }}
+          tag_name: v${{ steps.package.outputs.version }}
+          release_name: Release v${{ steps.package.outputs.version }}
           body: |
-            New release for commit ${{ github.sha }}.
+            New release for version ${{ steps.package.outputs.version }}.
             - Built and published to npm
           draft: false
           prerelease: false
