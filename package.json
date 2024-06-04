@@ -1,6 +1,6 @@
 {
   "name": "cv-contracts",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Carbon Voice Contracts",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -11,7 +11,12 @@
     "build": "npm run clean && npm run lint && npx tsc",
     "prepare": "npm run build"
   },
-  "keywords": ["cv-contracts", "carbon-voice-contracts", "contracts", "carbon-voice"],
+  "keywords": [
+    "cv-contracts",
+    "carbon-voice-contracts",
+    "contracts",
+    "carbon-voice"
+  ],
   "author": "Carbon Voice",
   "license": "ISC",
   "private": false,
