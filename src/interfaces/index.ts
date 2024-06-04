@@ -10,6 +10,7 @@ export * from './SubscribedUserSettings';
 export * from './WebhookPayload';
 export * from './Workspace';
 export * from './WorkspaceFindableChannelCreated';
+export * from './WorkspaceUserAdded';
 export * from './WorkspaceUserJoined';
 export * from './WorkspaceUserLeft';
 export * from './WorkspaceUserRemoved';
