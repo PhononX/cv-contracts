@@ -6,6 +6,7 @@ This repository contains a collection of TypeScript interfaces and enums that ar
 The primary idea is to have a centralized place for webhook communication with [Carbon Voice API](https://api.carbonvoice.app/v2/docs/#/)
 
 ## Usage example:
+
 ## Install library
 ```bash
 npm i cv-contracts
