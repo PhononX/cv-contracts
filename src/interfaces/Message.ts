@@ -6,8 +6,6 @@ export interface Message {
   creator_guid: string;
   channel_guid?: string | null;
   workspace_guid?: string | null;
-  creator_first_name: string;
-  creator_last_name: string;
   created_at: number;
   last_updated_at: number;
   deleted_at?: number | null;
