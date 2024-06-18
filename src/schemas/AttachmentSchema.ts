@@ -51,7 +51,7 @@ export const AttachmentSchema = {
     location: {},
   },
   additionalProperties: false,
-  required: ['_id', 'created_at', 'creator_id', 'link', 'location', 'type'],
+  required: ['_id', 'created_at', 'creator_id', 'link', 'type'],
   definitions: {
     AttachmentType: {
       type: 'string',

@@ -145,7 +145,7 @@ export const MessageSchema = {
         location: {},
       },
       additionalProperties: false,
-      required: ['_id', 'created_at', 'creator_id', 'link', 'location', 'type'],
+      required: ['_id', 'created_at', 'creator_id', 'link', 'type'],
     },
     AttachmentType: {
       type: 'string',
