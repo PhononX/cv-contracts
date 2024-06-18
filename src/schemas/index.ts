@@ -1,4 +1,5 @@
 export * from './AsyncMeetingStatsSchema';
+export * from './AttachmentSchema';
 export * from './BasicUserSchema';
 export * from './ChannelSchema';
 export * from './ChannelUserJoinedSchema';

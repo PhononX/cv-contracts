@@ -55,6 +55,12 @@ export const MessageSchema = {
     status: {
       $ref: '#/definitions/MessageStatus',
     },
+    attachments: {
+      type: 'array',
+      items: {
+        $ref: '#/definitions/Attachment',
+      },
+    },
     type: {
       $ref: '#/definitions/MessageType',
     },
@@ -86,6 +92,65 @@ export const MessageSchema = {
         'canceled',
       ],
     },
+    Attachment: {
+      type: 'object',
+      properties: {
+        _id: {
+          type: 'string',
+        },
+        creator_id: {
+          type: 'string',
+        },
+        created_at: {
+          type: 'string',
+          format: 'date-time',
+        },
+        type: {
+          $ref: '#/definitions/AttachmentType',
+        },
+        link: {
+          type: 'string',
+        },
+        active_begin: {
+          anyOf: [
+            {
+              type: 'string',
+              format: 'date-time',
+            },
+            {
+              type: 'null',
+            },
+          ],
+        },
+        active_end: {
+          anyOf: [
+            {
+              type: 'string',
+              format: 'date-time',
+            },
+            {
+              type: 'null',
+            },
+          ],
+        },
+        filename: {
+          type: ['null', 'string'],
+        },
+        mime_type: {
+          type: ['null', 'string'],
+        },
+        length_in_bytes: {
+          type: ['null', 'number'],
+        },
+        location: {},
+      },
+      additionalProperties: false,
+      required: ['_id', 'created_at', 'creator_id', 'link', 'location', 'type'],
+    },
+    AttachmentType: {
+      type: 'string',
+      enum: ['link', 'file', 'location'],
+    },
     MessageType: {
       type: 'string',
       enum: ['channel', 'prerecorded', 'voicememo', 'stored', 'welcome'],
@@ -113,5 +178,6 @@ export enum MessageKeys {
   parent_message_guid = 'parent_message_guid',
   language = 'language',
   status = 'status',
+  attachments = 'attachments',
   type = 'type',
 }
