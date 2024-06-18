@@ -21,5 +21,5 @@ export interface Attachment {
 
   length_in_bytes?: number | null;
 
-  location: unknown | null;
+  location?: unknown | null;
 }
