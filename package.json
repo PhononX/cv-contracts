@@ -8,7 +8,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rimraf ./dist",
     "lint": "eslint --fix -c .eslintrc.js src/ --ext .ts",
-    "build": "npm run clean && npm run lint && npx tsc",
+    "build": "npm run clean && npm run generate-schemas && npm run lint && npx tsc",
+    "generate-schemas": "node ./src/utils/generate-schema-from-contracts.js && prettier ./src/schemas/** --write && echo '✅ Finish generating schema files'",
     "prepare": "npm run build"
   },
   "keywords": [
@@ -30,6 +31,7 @@
     "eslint-plugin-unused-imports": "^3.2.0",
     "prettier": "^3.2.5",
     "rimraf": "^5.0.7",
-    "typescript": "^4.9.4"
+    "typescript": "^4.9.4",
+    "typescript-json-schema": "^0.64.0"
   }
 }
