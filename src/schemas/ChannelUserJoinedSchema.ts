@@ -206,7 +206,7 @@ export const ChannelUserJoinedSchema = {
     },
   },
   $schema: 'http://json-schema.org/draft-07/schema#',
-} as const;
+};
 
 export enum ChannelUserJoinedKeys {
   channel = 'channel',

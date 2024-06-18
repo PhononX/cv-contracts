@@ -43,7 +43,7 @@ export const WorkspaceSchema = {
     'workspace_name',
   ],
   $schema: 'http://json-schema.org/draft-07/schema#',
-} as const;
+};
 
 export enum WorkspaceKeys {
   workspace_guid = 'workspace_guid',

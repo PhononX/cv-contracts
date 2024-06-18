@@ -118,7 +118,7 @@ export const WebhookPayloadSchema = {
     },
   },
   $schema: 'http://json-schema.org/draft-07/schema#',
-} as const;
+};
 
 export enum WebhookPayloadKeys {
   eventName = 'eventName',

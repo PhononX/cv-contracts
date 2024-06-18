@@ -42,7 +42,7 @@ export const LabelSchema = {
     },
   },
   $schema: 'http://json-schema.org/draft-07/schema#',
-} as const;
+};
 
 export enum LabelKeys {
   _id = '_id',

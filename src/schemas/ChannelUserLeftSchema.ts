@@ -206,7 +206,7 @@ export const ChannelUserLeftSchema = {
     },
   },
   $schema: 'http://json-schema.org/draft-07/schema#',
-} as const;
+};
 
 export enum ChannelUserLeftKeys {
   channel = 'channel',

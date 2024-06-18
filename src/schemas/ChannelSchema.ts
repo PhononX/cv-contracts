@@ -177,7 +177,7 @@ export const ChannelSchema = {
     },
   },
   $schema: 'http://json-schema.org/draft-07/schema#',
-} as const;
+};
 
 export enum ChannelKeys {
   channel_guid = 'channel_guid',

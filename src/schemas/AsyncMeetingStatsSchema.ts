@@ -72,7 +72,7 @@ export const AsyncMeetingStatsSchema = {
   additionalProperties: false,
   required: ['channel_stats', 'user_stats'],
   $schema: 'http://json-schema.org/draft-07/schema#',
-} as const;
+};
 
 export enum AsyncMeetingStatsKeys {
   channel_stats = 'channel_stats',

@@ -92,7 +92,7 @@ export const MessageSchema = {
     },
   },
   $schema: 'http://json-schema.org/draft-07/schema#',
-} as const;
+};
 
 export enum MessageKeys {
   message_guid = 'message_guid',

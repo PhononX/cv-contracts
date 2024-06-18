@@ -14,7 +14,7 @@ export const SubscribedUserSettingsSchema = {
   additionalProperties: false,
   required: ['userId'],
   $schema: 'http://json-schema.org/draft-07/schema#',
-} as const;
+};
 
 export enum SubscribedUserSettingsKeys {
   userId = 'userId',

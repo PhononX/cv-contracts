@@ -74,7 +74,7 @@ export const WorkspaceUserJoinedSchema = {
     },
   },
   $schema: 'http://json-schema.org/draft-07/schema#',
-} as const;
+};
 
 export enum WorkspaceUserJoinedKeys {
   workspace = 'workspace',

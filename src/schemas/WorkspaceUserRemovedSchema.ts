@@ -77,7 +77,7 @@ export const WorkspaceUserRemovedSchema = {
     },
   },
   $schema: 'http://json-schema.org/draft-07/schema#',
-} as const;
+};
 
 export enum WorkspaceUserRemovedKeys {
   workspace = 'workspace',

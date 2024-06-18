@@ -70,7 +70,7 @@ const generateSchemaFiles = () => {
       }
 
       const schemaString = JSON.stringify(schema, null, 2);
-      const tsSchemaString = `export const ${interfaceName}${schemaName} = ${schemaString} as const;`;
+      const tsSchemaString = `export const ${interfaceName}${schemaName} = ${schemaString};`;
 
       // Create an enum with all keys from the interface
       const allKeys = Object.keys(schema.properties);
