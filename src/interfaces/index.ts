@@ -16,3 +16,4 @@ export * from './WorkspaceUserLeft';
 export * from './WorkspaceUserRemoved';
 export * from './SubscriptionFilter';
 export * from './Label';
+export * from './Attachment';

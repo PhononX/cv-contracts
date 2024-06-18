@@ -7,3 +7,4 @@ export * from './SubscriptionEvents';
 export * from './SubscriptionOperator';
 export * from './LabelBehavior';
 export * from './LabelType';
+export * from './AttachmentType';

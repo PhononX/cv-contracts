@@ -1,3 +1,5 @@
+import { Attachment } from './Attachment';
+
 import { MessageStatus } from '../enums';
 import { MessageType } from '../enums/MessageType';
 
@@ -20,5 +22,6 @@ export interface Message {
   parent_message_guid?: string | null;
   language?: string | null;
   status: MessageStatus;
+  attachments?: Attachment[];
   type: MessageType;
 }
