@@ -10,6 +10,7 @@ export * from './LabelSchema';
 export * from './MessageSchema';
 export * from './SubscribedUserSettingsSchema';
 export * from './SubscriptionFilterSchema';
+export * from './UserSchema';
 export * from './WebhookPayloadSchema';
 export * from './WorkspaceSchema';
 export * from './WorkspaceFindableChannelCreatedSchema';
