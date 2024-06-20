@@ -1,6 +1,6 @@
 {
   "name": "cv-contracts",
-  "version": "0.0.19",
+  "version": "0.0.20",
   "description": "Carbon Voice Contracts",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
