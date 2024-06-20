@@ -34,6 +34,12 @@ export const UserSchema = {
         type: 'string',
       },
     },
+    languages: {
+      type: 'array',
+      items: {
+        type: 'string',
+      },
+    },
   },
   additionalProperties: false,
   required: ['_id', 'created_at', 'first_name', 'full_name', 'self_link'],
@@ -50,4 +56,5 @@ export enum UserKeys {
   created_at = 'created_at',
   phones = 'phones',
   emails = 'emails',
+  languages = 'languages',
 }
