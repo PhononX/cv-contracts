@@ -5,6 +5,7 @@ import { MessageType } from '../enums/MessageType';
 
 export interface Message {
   message_guid: string;
+  self_link: string;
   creator_guid: string;
   channel_guid?: string | null;
   workspace_guid?: string | null;

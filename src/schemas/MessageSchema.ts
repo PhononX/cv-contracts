@@ -4,6 +4,9 @@ export const MessageSchema = {
     message_guid: {
       type: 'string',
     },
+    self_link: {
+      type: 'string',
+    },
     creator_guid: {
       type: 'string',
     },
@@ -73,6 +76,7 @@ export const MessageSchema = {
     'last_updated_at',
     'message_guid',
     'reply_count',
+    'self_link',
     'status',
     'type',
   ],
@@ -161,6 +165,7 @@ export const MessageSchema = {
 
 export enum MessageKeys {
   message_guid = 'message_guid',
+  self_link = 'self_link',
   creator_guid = 'creator_guid',
   channel_guid = 'channel_guid',
   workspace_guid = 'workspace_guid',
