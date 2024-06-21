@@ -9,7 +9,6 @@ export const AttachmentSchema = {
     },
     created_at: {
       type: 'string',
-      format: 'date-time',
     },
     type: {
       $ref: '#/definitions/AttachmentType',
@@ -18,26 +17,10 @@ export const AttachmentSchema = {
       type: 'string',
     },
     active_begin: {
-      anyOf: [
-        {
-          type: 'string',
-          format: 'date-time',
-        },
-        {
-          type: 'null',
-        },
-      ],
+      type: ['null', 'string'],
     },
     active_end: {
-      anyOf: [
-        {
-          type: 'string',
-          format: 'date-time',
-        },
-        {
-          type: 'null',
-        },
-      ],
+      type: ['null', 'string'],
     },
     filename: {
       type: ['null', 'string'],

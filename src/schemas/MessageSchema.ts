@@ -18,22 +18,12 @@ export const MessageSchema = {
     },
     created_at: {
       type: 'string',
-      format: 'date-time',
     },
     last_updated_at: {
       type: 'string',
-      format: 'date-time',
     },
     deleted_at: {
-      anyOf: [
-        {
-          type: 'string',
-          format: 'date-time',
-        },
-        {
-          type: 'null',
-        },
-      ],
+      type: ['null', 'string'],
     },
     duration_ms: {
       type: 'number',
@@ -117,7 +107,6 @@ export const MessageSchema = {
         },
         created_at: {
           type: 'string',
-          format: 'date-time',
         },
         type: {
           $ref: '#/definitions/AttachmentType',
@@ -126,26 +115,10 @@ export const MessageSchema = {
           type: 'string',
         },
         active_begin: {
-          anyOf: [
-            {
-              type: 'string',
-              format: 'date-time',
-            },
-            {
-              type: 'null',
-            },
-          ],
+          type: ['null', 'string'],
         },
         active_end: {
-          anyOf: [
-            {
-              type: 'string',
-              format: 'date-time',
-            },
-            {
-              type: 'null',
-            },
-          ],
+          type: ['null', 'string'],
         },
         filename: {
           type: ['null', 'string'],
