@@ -17,13 +17,13 @@ export const MessageSchema = {
       type: ['null', 'string'],
     },
     created_at: {
-      type: 'number',
+      type: 'string',
     },
     last_updated_at: {
-      type: 'number',
+      type: 'string',
     },
     deleted_at: {
-      type: ['null', 'number'],
+      type: ['null', 'string'],
     },
     duration_ms: {
       type: 'number',
