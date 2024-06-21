@@ -21,6 +21,7 @@ export const UserSchema = {
     },
     created_at: {
       type: 'string',
+      format: 'date-time',
     },
     phones: {
       type: 'array',

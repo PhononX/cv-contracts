@@ -18,12 +18,22 @@ export const MessageSchema = {
     },
     created_at: {
       type: 'string',
+      format: 'date-time',
     },
     last_updated_at: {
       type: 'string',
+      format: 'date-time',
     },
     deleted_at: {
-      type: ['null', 'string'],
+      anyOf: [
+        {
+          type: 'string',
+          format: 'date-time',
+        },
+        {
+          type: 'null',
+        },
+      ],
     },
     duration_ms: {
       type: 'number',
