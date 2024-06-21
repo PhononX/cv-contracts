@@ -9,9 +9,9 @@ export interface Message {
   creator_guid: string;
   channel_guid?: string | null;
   workspace_guid?: string | null;
-  created_at: number;
-  last_updated_at: number;
-  deleted_at?: number | null;
+  created_at: string;
+  last_updated_at: string;
+  deleted_at?: string | null;
   duration_ms: number;
   message_url?: string | null;
   audio_stream_url?: string | null;
