@@ -5,15 +5,15 @@ export interface Attachment {
 
   creator_id: string;
 
-  created_at: Date;
+  created_at: string;
 
   type: AttachmentType;
 
   link: string;
 
-  active_begin?: Date | null;
+  active_begin?: string | null;
 
-  active_end?: Date | null;
+  active_end?: string | null;
 
   filename?: string | null;
 

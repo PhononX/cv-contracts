@@ -5,7 +5,7 @@ export interface User {
   last_name?: string;
   full_name: string;
   image_url?: string;
-  created_at: Date;
+  created_at: string;
   phones?: string[];
   emails?: string[];
   languages?: string[];
