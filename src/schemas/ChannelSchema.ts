@@ -4,6 +4,9 @@ export const ChannelSchema = {
     channel_guid: {
       type: 'string',
     },
+    self_link: {
+      type: 'string',
+    },
     channel_name: {
       type: 'string',
     },
@@ -72,6 +75,7 @@ export const ChannelSchema = {
     'is_private',
     'last_updated_at',
     'owner_guid',
+    'self_link',
     'total_duration_ms',
     'total_messages',
     'type',
@@ -173,6 +177,7 @@ export const ChannelSchema = {
 
 export enum ChannelKeys {
   channel_guid = 'channel_guid',
+  self_link = 'self_link',
   channel_name = 'channel_name',
   channel_description = 'channel_description',
   workspace_guid = 'workspace_guid',

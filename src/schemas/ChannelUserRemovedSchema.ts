@@ -20,6 +20,9 @@ export const ChannelUserRemovedSchema = {
         channel_guid: {
           type: 'string',
         },
+        self_link: {
+          type: 'string',
+        },
         channel_name: {
           type: 'string',
         },
@@ -88,6 +91,7 @@ export const ChannelUserRemovedSchema = {
         'is_private',
         'last_updated_at',
         'owner_guid',
+        'self_link',
         'total_duration_ms',
         'total_messages',
         'type',
