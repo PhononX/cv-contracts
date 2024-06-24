@@ -10,8 +10,8 @@ export interface Channel {
   workspace_name: string;
   workspace_image_url?: string | null;
   owner_guid: string;
-  owner_first_name: string;
-  owner_last_name: string;
+  // owner_first_name: string;
+  // owner_last_name: string;
   type: ChannelType;
   visibility: ChannelVisibility;
   total_messages: number;
@@ -20,7 +20,7 @@ export interface Channel {
   is_private: boolean;
   is_async: boolean;
   async_stats?: AsyncMeetingStats | null;
-  created_at: number;
-  last_updated_at: number;
-  deleted_at?: number | null;
+  created_at: string;
+  last_updated_at: string;
+  deleted_at?: string;
 }
