@@ -4,6 +4,7 @@ import { ChannelType, ChannelVisibility } from '../enums';
 
 export interface Channel {
   channel_guid: string;
+  self_link: string;
   channel_name: string;
   channel_description?: string | null;
   workspace_guid: string;
