@@ -35,12 +35,6 @@ export const ChannelUserJoinedSchema = {
         owner_guid: {
           type: 'string',
         },
-        owner_first_name: {
-          type: 'string',
-        },
-        owner_last_name: {
-          type: 'string',
-        },
         type: {
           $ref: '#/definitions/ChannelType',
         },
@@ -73,13 +67,13 @@ export const ChannelUserJoinedSchema = {
           ],
         },
         created_at: {
-          type: 'number',
+          type: 'string',
         },
         last_updated_at: {
-          type: 'number',
+          type: 'string',
         },
         deleted_at: {
-          type: ['null', 'number'],
+          type: 'string',
         },
       },
       additionalProperties: false,
@@ -90,9 +84,7 @@ export const ChannelUserJoinedSchema = {
         'is_async',
         'is_private',
         'last_updated_at',
-        'owner_first_name',
         'owner_guid',
-        'owner_last_name',
         'total_duration_ms',
         'total_messages',
         'type',
