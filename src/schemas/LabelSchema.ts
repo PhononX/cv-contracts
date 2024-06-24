@@ -30,7 +30,7 @@ export const LabelSchema = {
     },
   },
   additionalProperties: false,
-  required: ['_id', 'behavior', 'creator_guid', 'name', 'sort_order', 'type'],
+  required: ['_id', 'behavior', 'creator_guid', 'name', 'type'],
   definitions: {
     LabelBehavior: {
       type: 'string',
