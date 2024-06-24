@@ -17,5 +17,5 @@ export interface Label {
 
   automatic_playlist?: boolean;
 
-  sort_order: number;
+  sort_order?: number;
 }
