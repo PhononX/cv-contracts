@@ -59,6 +59,7 @@ export const WebhookPayloadSchema = {
         'message.deleted',
         'message.discussion-notes.added',
         'message.label.added',
+        'message.posted.to.channel',
         'channel.created',
         'channel.deleted',
         'channel.user.joined',
