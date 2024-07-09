@@ -8,3 +8,4 @@ export * from './SubscriptionOperator';
 export * from './LabelBehavior';
 export * from './LabelType';
 export * from './AttachmentType';
+export * from './ElevenLabsSupportedLanguages';
