@@ -1,6 +1,6 @@
 export interface User {
-  _id: string;
-  self_link: string;
+  id: string;
+  link: string;
   first_name: string;
   last_name?: string;
   full_name: string;

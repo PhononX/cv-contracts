@@ -1,4 +1,4 @@
-export const BasicUserSchema = {
+export const WebhookBasicUserSchema = {
   type: 'object',
   properties: {
     user_guid: {
@@ -16,7 +16,7 @@ export const BasicUserSchema = {
   $schema: 'http://json-schema.org/draft-07/schema#',
 };
 
-export enum BasicUserKeys {
+export enum WebhookBasicUserKeys {
   user_guid = 'user_guid',
   first_name = 'first_name',
   last_name = 'last_name',

@@ -1,7 +1,7 @@
 import { SubscribedUserSettings } from './SubscribedUserSettings';
 
-import { SubscriptionEvents } from '../enums';
-import { ResourceType } from '../enums/ResourceType';
+import { SubscriptionEvents } from '../../enums/webhook';
+import { ResourceType } from '../../enums/webhook/ResourceType';
 
 export interface WebhookPayload<Resource> {
   /**

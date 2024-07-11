@@ -1,7 +1,7 @@
 import { AttachmentType } from '../enums';
 
 export interface Attachment {
-  _id: string;
+  id: string;
 
   creator_id: string;
 

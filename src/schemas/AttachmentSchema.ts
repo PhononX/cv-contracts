@@ -1,7 +1,7 @@
 export const AttachmentSchema = {
   type: 'object',
   properties: {
-    _id: {
+    id: {
       type: 'string',
     },
     creator_id: {
@@ -34,7 +34,7 @@ export const AttachmentSchema = {
     location: {},
   },
   additionalProperties: false,
-  required: ['_id', 'created_at', 'creator_id', 'link', 'type'],
+  required: ['created_at', 'creator_id', 'id', 'link', 'type'],
   definitions: {
     AttachmentType: {
       type: 'string',
@@ -45,7 +45,7 @@ export const AttachmentSchema = {
 };
 
 export enum AttachmentKeys {
-  _id = '_id',
+  id = 'id',
   creator_id = 'creator_id',
   created_at = 'created_at',
   type = 'type',

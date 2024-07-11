@@ -1,7 +1,7 @@
-export const AsyncMeetingStatsSchema = {
+export const WebhookAsyncMeetingStatsSchema = {
   type: 'object',
   properties: {
-    stats: {
+    channel_stats: {
       type: 'object',
       properties: {
         total_duration_milliseconds: {
@@ -70,11 +70,11 @@ export const AsyncMeetingStatsSchema = {
     },
   },
   additionalProperties: false,
-  required: ['stats', 'user_stats'],
+  required: ['channel_stats', 'user_stats'],
   $schema: 'http://json-schema.org/draft-07/schema#',
 };
 
-export enum AsyncMeetingStatsKeys {
-  stats = 'stats',
+export enum WebhookAsyncMeetingStatsKeys {
+  channel_stats = 'channel_stats',
   user_stats = 'user_stats',
 }

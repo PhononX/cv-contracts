@@ -1,17 +1,17 @@
-export const WorkspaceUserAddedSchema = {
+export const WebhookWorkspaceUserAddedSchema = {
   type: 'object',
   properties: {
     workspace: {
-      $ref: '#/definitions/Workspace',
+      $ref: '#/definitions/WebhookWorkspace',
     },
     addedUser: {
-      $ref: '#/definitions/BasicUser',
+      $ref: '#/definitions/WebhookBasicUser',
     },
   },
   additionalProperties: false,
   required: ['addedUser', 'workspace'],
   definitions: {
-    Workspace: {
+    WebhookWorkspace: {
       type: 'object',
       properties: {
         workspace_guid: {
@@ -56,7 +56,7 @@ export const WorkspaceUserAddedSchema = {
         'workspace_name',
       ],
     },
-    BasicUser: {
+    WebhookBasicUser: {
       type: 'object',
       properties: {
         user_guid: {
@@ -76,7 +76,7 @@ export const WorkspaceUserAddedSchema = {
   $schema: 'http://json-schema.org/draft-07/schema#',
 };
 
-export enum WorkspaceUserAddedKeys {
+export enum WebhookWorkspaceUserAddedKeys {
   workspace = 'workspace',
   addedUser = 'addedUser',
 }

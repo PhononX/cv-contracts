@@ -1,19 +1,19 @@
-export const WorkspaceSchema = {
+export const WebhookWorkspaceSchema = {
   type: 'object',
   properties: {
-    id: {
+    workspace_guid: {
       type: 'string',
     },
-    name: {
+    workspace_name: {
       type: 'string',
     },
-    description: {
+    workspace_description: {
       type: ['null', 'string'],
     },
     image_url: {
       type: ['null', 'string'],
     },
-    owner_id: {
+    owner_guid: {
       type: 'string',
     },
     owner_first_name: {
@@ -23,34 +23,34 @@ export const WorkspaceSchema = {
       type: 'string',
     },
     created_at: {
-      type: 'string',
+      type: 'number',
     },
     last_updated_at: {
-      type: 'string',
+      type: 'number',
     },
     deleted_at: {
-      type: ['null', 'string'],
+      type: ['null', 'number'],
     },
   },
   additionalProperties: false,
   required: [
     'created_at',
-    'id',
     'last_updated_at',
-    'name',
     'owner_first_name',
-    'owner_id',
+    'owner_guid',
     'owner_last_name',
+    'workspace_guid',
+    'workspace_name',
   ],
   $schema: 'http://json-schema.org/draft-07/schema#',
 };
 
-export enum WorkspaceKeys {
-  id = 'id',
-  name = 'name',
-  description = 'description',
+export enum WebhookWorkspaceKeys {
+  workspace_guid = 'workspace_guid',
+  workspace_name = 'workspace_name',
+  workspace_description = 'workspace_description',
   image_url = 'image_url',
-  owner_id = 'owner_id',
+  owner_guid = 'owner_guid',
   owner_first_name = 'owner_first_name',
   owner_last_name = 'owner_last_name',
   created_at = 'created_at',

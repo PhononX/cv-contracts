@@ -1,19 +1,19 @@
-export const ChannelSchema = {
+export const ConversationSchema = {
   type: 'object',
   properties: {
-    channel_guid: {
+    id: {
       type: 'string',
     },
-    self_link: {
+    link: {
       type: 'string',
     },
-    channel_name: {
+    name: {
       type: 'string',
     },
-    channel_description: {
+    description: {
       type: ['null', 'string'],
     },
-    workspace_guid: {
+    workspace_id: {
       type: 'string',
     },
     workspace_name: {
@@ -22,7 +22,7 @@ export const ChannelSchema = {
     workspace_image_url: {
       type: ['null', 'string'],
     },
-    owner_guid: {
+    owner_id: {
       type: 'string',
     },
     type: {
@@ -68,19 +68,19 @@ export const ChannelSchema = {
   },
   additionalProperties: false,
   required: [
-    'channel_guid',
-    'channel_name',
     'created_at',
+    'id',
     'is_async',
     'is_private',
     'last_updated_at',
-    'owner_guid',
-    'self_link',
+    'link',
+    'name',
+    'owner_id',
     'total_duration_ms',
     'total_messages',
     'type',
     'visibility',
-    'workspace_guid',
+    'workspace_id',
     'workspace_name',
   ],
   definitions: {
@@ -100,7 +100,7 @@ export const ChannelSchema = {
     AsyncMeetingStats: {
       type: 'object',
       properties: {
-        channel_stats: {
+        stats: {
           type: 'object',
           properties: {
             total_duration_milliseconds: {
@@ -169,21 +169,21 @@ export const ChannelSchema = {
         },
       },
       additionalProperties: false,
-      required: ['channel_stats', 'user_stats'],
+      required: ['stats', 'user_stats'],
     },
   },
   $schema: 'http://json-schema.org/draft-07/schema#',
 };
 
-export enum ChannelKeys {
-  channel_guid = 'channel_guid',
-  self_link = 'self_link',
-  channel_name = 'channel_name',
-  channel_description = 'channel_description',
-  workspace_guid = 'workspace_guid',
+export enum ConversationKeys {
+  id = 'id',
+  link = 'link',
+  name = 'name',
+  description = 'description',
+  workspace_id = 'workspace_id',
   workspace_name = 'workspace_name',
   workspace_image_url = 'workspace_image_url',
-  owner_guid = 'owner_guid',
+  owner_id = 'owner_id',
   type = 'type',
   visibility = 'visibility',
   total_messages = 'total_messages',

@@ -1,20 +1,17 @@
-export const ChannelUserRemovedSchema = {
+export const WebhookChannelUserJoinedSchema = {
   type: 'object',
   properties: {
     channel: {
-      $ref: '#/definitions/Channel',
+      $ref: '#/definitions/WebhookChannel',
     },
-    removedBy: {
-      $ref: '#/definitions/BasicUser',
-    },
-    removedUser: {
-      $ref: '#/definitions/BasicUser',
+    joinedUser: {
+      $ref: '#/definitions/WebhookBasicUser',
     },
   },
   additionalProperties: false,
-  required: ['channel', 'removedBy', 'removedUser'],
+  required: ['channel', 'joinedUser'],
   definitions: {
-    Channel: {
+    WebhookChannel: {
       type: 'object',
       properties: {
         channel_guid: {
@@ -116,7 +113,7 @@ export const ChannelUserRemovedSchema = {
     AsyncMeetingStats: {
       type: 'object',
       properties: {
-        channel_stats: {
+        stats: {
           type: 'object',
           properties: {
             total_duration_milliseconds: {
@@ -185,9 +182,9 @@ export const ChannelUserRemovedSchema = {
         },
       },
       additionalProperties: false,
-      required: ['channel_stats', 'user_stats'],
+      required: ['stats', 'user_stats'],
     },
-    BasicUser: {
+    WebhookBasicUser: {
       type: 'object',
       properties: {
         user_guid: {
@@ -207,8 +204,7 @@ export const ChannelUserRemovedSchema = {
   $schema: 'http://json-schema.org/draft-07/schema#',
 };
 
-export enum ChannelUserRemovedKeys {
+export enum WebhookChannelUserJoinedKeys {
   channel = 'channel',
-  removedBy = 'removedBy',
-  removedUser = 'removedUser',
+  joinedUser = 'joinedUser',
 }

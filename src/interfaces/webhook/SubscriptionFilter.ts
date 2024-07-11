@@ -1,4 +1,4 @@
-import { Operator } from '../enums';
+import { Operator } from '../../enums/webhook';
 
 export interface SubscriptionFilter {
   key: string;

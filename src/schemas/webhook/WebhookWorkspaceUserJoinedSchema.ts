@@ -1,17 +1,17 @@
-export const WorkspaceUserLeftSchema = {
+export const WebhookWorkspaceUserJoinedSchema = {
   type: 'object',
   properties: {
     workspace: {
-      $ref: '#/definitions/Workspace',
+      $ref: '#/definitions/WebhookWorkspace',
     },
-    leftUser: {
-      $ref: '#/definitions/BasicUser',
+    joinedUser: {
+      $ref: '#/definitions/WebhookBasicUser',
     },
   },
   additionalProperties: false,
-  required: ['leftUser', 'workspace'],
+  required: ['joinedUser', 'workspace'],
   definitions: {
-    Workspace: {
+    WebhookWorkspace: {
       type: 'object',
       properties: {
         workspace_guid: {
@@ -56,7 +56,7 @@ export const WorkspaceUserLeftSchema = {
         'workspace_name',
       ],
     },
-    BasicUser: {
+    WebhookBasicUser: {
       type: 'object',
       properties: {
         user_guid: {
@@ -76,7 +76,7 @@ export const WorkspaceUserLeftSchema = {
   $schema: 'http://json-schema.org/draft-07/schema#',
 };
 
-export enum WorkspaceUserLeftKeys {
+export enum WebhookWorkspaceUserJoinedKeys {
   workspace = 'workspace',
-  leftUser = 'leftUser',
+  joinedUser = 'joinedUser',
 }

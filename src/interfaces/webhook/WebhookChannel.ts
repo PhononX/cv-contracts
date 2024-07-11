@@ -1,8 +1,7 @@
-import { AsyncMeetingStats } from './AsyncMeetingStats';
+import { ChannelType, ChannelVisibility } from '../../enums/webhook';
+import { AsyncMeetingStats } from '../AsyncMeetingStats';
 
-import { ChannelType, ChannelVisibility } from '../enums';
-
-export interface Channel {
+export interface WebhookChannel {
   channel_guid: string;
   self_link: string;
   channel_name: string;
@@ -11,8 +10,6 @@ export interface Channel {
   workspace_name: string;
   workspace_image_url?: string | null;
   owner_guid: string;
-  // owner_first_name: string;
-  // owner_last_name: string;
   type: ChannelType;
   visibility: ChannelVisibility;
   total_messages: number;

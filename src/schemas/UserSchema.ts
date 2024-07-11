@@ -1,10 +1,10 @@
 export const UserSchema = {
   type: 'object',
   properties: {
-    _id: {
+    id: {
       type: 'string',
     },
-    self_link: {
+    link: {
       type: 'string',
     },
     first_name: {
@@ -42,13 +42,13 @@ export const UserSchema = {
     },
   },
   additionalProperties: false,
-  required: ['_id', 'created_at', 'first_name', 'full_name', 'self_link'],
+  required: ['created_at', 'first_name', 'full_name', 'id', 'link'],
   $schema: 'http://json-schema.org/draft-07/schema#',
 };
 
 export enum UserKeys {
-  _id = '_id',
-  self_link = 'self_link',
+  id = 'id',
+  link = 'link',
   first_name = 'first_name',
   last_name = 'last_name',
   full_name = 'full_name',

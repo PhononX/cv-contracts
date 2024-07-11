@@ -1,7 +1,7 @@
 export const LabelSchema = {
   type: 'object',
   properties: {
-    _id: {
+    id: {
       type: 'string',
     },
     name: {
@@ -30,7 +30,7 @@ export const LabelSchema = {
     },
   },
   additionalProperties: false,
-  required: ['_id', 'behavior', 'creator_guid', 'name', 'type'],
+  required: ['behavior', 'creator_guid', 'id', 'name', 'type'],
   definitions: {
     LabelBehavior: {
       type: 'string',
@@ -45,7 +45,7 @@ export const LabelSchema = {
 };
 
 export enum LabelKeys {
-  _id = '_id',
+  id = 'id',
   name = 'name',
   behavior = 'behavior',
   type = 'type',

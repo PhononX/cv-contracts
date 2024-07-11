@@ -1,20 +1,17 @@
-export const WorkspaceUserRemovedSchema = {
+export const WebhookWorkspaceUserLeftSchema = {
   type: 'object',
   properties: {
     workspace: {
-      $ref: '#/definitions/Workspace',
+      $ref: '#/definitions/WebhookWorkspace',
     },
-    removedBy: {
-      $ref: '#/definitions/BasicUser',
-    },
-    removedUser: {
-      $ref: '#/definitions/BasicUser',
+    leftUser: {
+      $ref: '#/definitions/WebhookBasicUser',
     },
   },
   additionalProperties: false,
-  required: ['removedBy', 'removedUser', 'workspace'],
+  required: ['leftUser', 'workspace'],
   definitions: {
-    Workspace: {
+    WebhookWorkspace: {
       type: 'object',
       properties: {
         workspace_guid: {
@@ -59,7 +56,7 @@ export const WorkspaceUserRemovedSchema = {
         'workspace_name',
       ],
     },
-    BasicUser: {
+    WebhookBasicUser: {
       type: 'object',
       properties: {
         user_guid: {
@@ -79,8 +76,7 @@ export const WorkspaceUserRemovedSchema = {
   $schema: 'http://json-schema.org/draft-07/schema#',
 };
 
-export enum WorkspaceUserRemovedKeys {
+export enum WebhookWorkspaceUserLeftKeys {
   workspace = 'workspace',
-  removedBy = 'removedBy',
-  removedUser = 'removedUser',
+  leftUser = 'leftUser',
 }

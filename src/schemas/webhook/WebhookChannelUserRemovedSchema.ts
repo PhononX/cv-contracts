@@ -1,17 +1,20 @@
-export const WorkspaceFindableChannelCreatedSchema = {
+export const WebhookChannelUserRemovedSchema = {
   type: 'object',
   properties: {
     channel: {
-      $ref: '#/definitions/Channel',
+      $ref: '#/definitions/WebhookChannel',
     },
-    workspace: {
-      $ref: '#/definitions/Workspace',
+    removedBy: {
+      $ref: '#/definitions/WebhookBasicUser',
+    },
+    removedUser: {
+      $ref: '#/definitions/WebhookBasicUser',
     },
   },
   additionalProperties: false,
-  required: ['channel', 'workspace'],
+  required: ['channel', 'removedBy', 'removedUser'],
   definitions: {
-    Channel: {
+    WebhookChannel: {
       type: 'object',
       properties: {
         channel_guid: {
@@ -113,7 +116,7 @@ export const WorkspaceFindableChannelCreatedSchema = {
     AsyncMeetingStats: {
       type: 'object',
       properties: {
-        channel_stats: {
+        stats: {
           type: 'object',
           properties: {
             total_duration_milliseconds: {
@@ -182,58 +185,30 @@ export const WorkspaceFindableChannelCreatedSchema = {
         },
       },
       additionalProperties: false,
-      required: ['channel_stats', 'user_stats'],
+      required: ['stats', 'user_stats'],
     },
-    Workspace: {
+    WebhookBasicUser: {
       type: 'object',
       properties: {
-        workspace_guid: {
+        user_guid: {
           type: 'string',
         },
-        workspace_name: {
+        first_name: {
           type: 'string',
         },
-        workspace_description: {
-          type: ['null', 'string'],
-        },
-        image_url: {
-          type: ['null', 'string'],
-        },
-        owner_guid: {
+        last_name: {
           type: 'string',
-        },
-        owner_first_name: {
-          type: 'string',
-        },
-        owner_last_name: {
-          type: 'string',
-        },
-        created_at: {
-          type: 'number',
-        },
-        last_updated_at: {
-          type: 'number',
-        },
-        deleted_at: {
-          type: ['null', 'number'],
         },
       },
       additionalProperties: false,
-      required: [
-        'created_at',
-        'last_updated_at',
-        'owner_first_name',
-        'owner_guid',
-        'owner_last_name',
-        'workspace_guid',
-        'workspace_name',
-      ],
+      required: ['first_name', 'last_name', 'user_guid'],
     },
   },
   $schema: 'http://json-schema.org/draft-07/schema#',
 };
 
-export enum WorkspaceFindableChannelCreatedKeys {
+export enum WebhookChannelUserRemovedKeys {
   channel = 'channel',
-  workspace = 'workspace',
+  removedBy = 'removedBy',
+  removedUser = 'removedUser',
 }

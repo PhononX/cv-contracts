@@ -1,5 +1,5 @@
-export interface AsyncMeetingStats {
-  stats: {
+export interface WebhookAsyncMeetingStats {
+  channel_stats: {
     total_duration_milliseconds: number;
     total_heard_milliseconds: number;
     total_engaged_percentage: number;

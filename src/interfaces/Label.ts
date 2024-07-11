@@ -1,7 +1,7 @@
 import { LabelBehavior, LabelType } from '../enums';
 
 export interface Label {
-  _id: string;
+  id: string;
 
   name: string;
 

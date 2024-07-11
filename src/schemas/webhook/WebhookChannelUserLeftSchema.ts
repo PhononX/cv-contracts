@@ -1,17 +1,17 @@
-export const ChannelUserJoinedSchema = {
+export const WebhookChannelUserLeftSchema = {
   type: 'object',
   properties: {
     channel: {
-      $ref: '#/definitions/Channel',
+      $ref: '#/definitions/WebhookChannel',
     },
-    joinedUser: {
-      $ref: '#/definitions/BasicUser',
+    leftUser: {
+      $ref: '#/definitions/WebhookBasicUser',
     },
   },
   additionalProperties: false,
-  required: ['channel', 'joinedUser'],
+  required: ['channel', 'leftUser'],
   definitions: {
-    Channel: {
+    WebhookChannel: {
       type: 'object',
       properties: {
         channel_guid: {
@@ -113,7 +113,7 @@ export const ChannelUserJoinedSchema = {
     AsyncMeetingStats: {
       type: 'object',
       properties: {
-        channel_stats: {
+        stats: {
           type: 'object',
           properties: {
             total_duration_milliseconds: {
@@ -182,9 +182,9 @@ export const ChannelUserJoinedSchema = {
         },
       },
       additionalProperties: false,
-      required: ['channel_stats', 'user_stats'],
+      required: ['stats', 'user_stats'],
     },
-    BasicUser: {
+    WebhookBasicUser: {
       type: 'object',
       properties: {
         user_guid: {
@@ -204,7 +204,7 @@ export const ChannelUserJoinedSchema = {
   $schema: 'http://json-schema.org/draft-07/schema#',
 };
 
-export enum ChannelUserJoinedKeys {
+export enum WebhookChannelUserLeftKeys {
   channel = 'channel',
-  joinedUser = 'joinedUser',
+  leftUser = 'leftUser',
 }
