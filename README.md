@@ -14,29 +14,50 @@ npm i cv-contracts
 
 ## Import respective contract
 ```ts
-import { Message } from 'cv-contracts';
+import { Message, Conversation } from 'cv-contracts';
 
 const msg: Message = {
-  message_guid: string;
-  creator_guid: string;
-  channel_guid?: string | null;
-  workspace_guid?: string | null;
-  creator_first_name: string;
-  creator_last_name: string;
-  created_at: number;
-  last_updated_at: number;
-  deleted_at?: number | null;
+  id: string;
+  link: string;
+  creator_id: string;
+  conversation_id?: string | null;
+  workspace_id?: string | null;
+  created_at: string;
+  last_updated_at: string;
+  deleted_at?: string | null;
   duration_ms: number;
-  message_url?: string | null;
+  audio_url?: string | null;
   audio_stream_url?: string | null;
-  transcript_txt?: string | null;
-  ai_summary_txt?: string | null;
+  transcript?: string | null;
+  ai_summary?: string | null;
   has_ai_summary?: boolean;
   waveform_url?: string | null;
   reply_count: number;
-  parent_message_guid?: string | null;
+  parent_message_id?: string | null;
   language?: string | null;
   status: MessageStatus;
+  attachments?: Attachment[];
   type: MessageType;
 }
+ const conversation: Conversation = {
+    id: string;
+    link: string;
+    name: string;
+    description?: string | null;
+    workspace_id: string;
+    workspace_name: string;
+    workspace_image_url?: string | null;
+    owner_id: string;
+    type: ChannelType;
+    visibility: ChannelVisibility;
+    total_messages: number;
+    total_duration_ms: number;
+    image_url?: string | null;
+    is_private: boolean;
+    is_async: boolean;
+    async_stats?: AsyncMeetingStats | null;
+    created_at: string;
+    last_updated_at: string;
+    deleted_at?: string;
+ }
 ```
