@@ -49,7 +49,7 @@ export const WebhookChannelSchema = {
     async_stats: {
       anyOf: [
         {
-          $ref: '#/definitions/AsyncMeetingStats',
+          $ref: '#/definitions/WebhookAsyncMeetingStats',
         },
         {
           type: 'null',
@@ -97,10 +97,10 @@ export const WebhookChannelSchema = {
       type: 'string',
       enum: ['private', 'workspace', 'public'],
     },
-    AsyncMeetingStats: {
+    WebhookAsyncMeetingStats: {
       type: 'object',
       properties: {
-        stats: {
+        channel_stats: {
           type: 'object',
           properties: {
             total_duration_milliseconds: {
@@ -169,7 +169,7 @@ export const WebhookChannelSchema = {
         },
       },
       additionalProperties: false,
-      required: ['stats', 'user_stats'],
+      required: ['channel_stats', 'user_stats'],
     },
   },
   $schema: 'http://json-schema.org/draft-07/schema#',

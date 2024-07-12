@@ -62,7 +62,7 @@ export const WebhookWorkspaceFindableChannelCreatedSchema = {
         async_stats: {
           anyOf: [
             {
-              $ref: '#/definitions/AsyncMeetingStats',
+              $ref: '#/definitions/WebhookAsyncMeetingStats',
             },
             {
               type: 'null',
@@ -110,10 +110,10 @@ export const WebhookWorkspaceFindableChannelCreatedSchema = {
       type: 'string',
       enum: ['private', 'workspace', 'public'],
     },
-    AsyncMeetingStats: {
+    WebhookAsyncMeetingStats: {
       type: 'object',
       properties: {
-        stats: {
+        channel_stats: {
           type: 'object',
           properties: {
             total_duration_milliseconds: {
@@ -182,7 +182,7 @@ export const WebhookWorkspaceFindableChannelCreatedSchema = {
         },
       },
       additionalProperties: false,
-      required: ['stats', 'user_stats'],
+      required: ['channel_stats', 'user_stats'],
     },
     WebhookWorkspace: {
       type: 'object',

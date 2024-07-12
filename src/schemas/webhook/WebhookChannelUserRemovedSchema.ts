@@ -65,7 +65,7 @@ export const WebhookChannelUserRemovedSchema = {
         async_stats: {
           anyOf: [
             {
-              $ref: '#/definitions/AsyncMeetingStats',
+              $ref: '#/definitions/WebhookAsyncMeetingStats',
             },
             {
               type: 'null',
@@ -113,10 +113,10 @@ export const WebhookChannelUserRemovedSchema = {
       type: 'string',
       enum: ['private', 'workspace', 'public'],
     },
-    AsyncMeetingStats: {
+    WebhookAsyncMeetingStats: {
       type: 'object',
       properties: {
-        stats: {
+        channel_stats: {
           type: 'object',
           properties: {
             total_duration_milliseconds: {
@@ -185,7 +185,7 @@ export const WebhookChannelUserRemovedSchema = {
         },
       },
       additionalProperties: false,
-      required: ['stats', 'user_stats'],
+      required: ['channel_stats', 'user_stats'],
     },
     WebhookBasicUser: {
       type: 'object',
