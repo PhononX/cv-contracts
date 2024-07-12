@@ -23,13 +23,13 @@ export const WebhookWorkspaceSchema = {
       type: 'string',
     },
     created_at: {
-      type: 'string',
+      type: 'number',
     },
     last_updated_at: {
-      type: 'string',
+      type: 'number',
     },
     deleted_at: {
-      type: ['null', 'string'],
+      type: ['null', 'number'],
     },
   },
   additionalProperties: false,
