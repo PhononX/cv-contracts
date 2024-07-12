@@ -1,6 +1,6 @@
 import { AsyncMeetingStats } from './AsyncMeetingStats';
 
-import { ChannelType, ChannelVisibility } from '../enums/webhook';
+import { ConversationType, ConversationVisibility } from '../enums';
 
 export interface Conversation {
   id: string;
@@ -11,8 +11,8 @@ export interface Conversation {
   workspace_name: string;
   workspace_image_url?: string | null;
   owner_id: string;
-  type: ChannelType;
-  visibility: ChannelVisibility;
+  type: ConversationType;
+  visibility: ConversationVisibility;
   total_messages: number;
   total_duration_ms: number;
   image_url?: string | null;
