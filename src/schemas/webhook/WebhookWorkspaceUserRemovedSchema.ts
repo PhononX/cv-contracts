@@ -39,13 +39,13 @@ export const WebhookWorkspaceUserRemovedSchema = {
           type: 'string',
         },
         created_at: {
-          type: 'number',
+          type: 'string',
         },
         last_updated_at: {
-          type: 'number',
+          type: 'string',
         },
         deleted_at: {
-          type: ['null', 'number'],
+          type: ['null', 'string'],
         },
       },
       additionalProperties: false,
