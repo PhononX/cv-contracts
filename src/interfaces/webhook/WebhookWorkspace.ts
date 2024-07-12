@@ -6,7 +6,7 @@ export interface WebhookWorkspace {
   owner_guid: string;
   owner_first_name: string;
   owner_last_name: string;
-  created_at: string;
-  last_updated_at: string;
-  deleted_at?: string | null;
+  created_at: number;
+  last_updated_at: number;
+  deleted_at?: number | null;
 }
