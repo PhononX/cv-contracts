@@ -26,10 +26,10 @@ export const ConversationSchema = {
       type: 'string',
     },
     type: {
-      $ref: '#/definitions/ChannelType',
+      $ref: '#/definitions/ConversationType',
     },
     visibility: {
-      $ref: '#/definitions/ChannelVisibility',
+      $ref: '#/definitions/ConversationVisibility',
     },
     total_messages: {
       type: 'number',
@@ -84,7 +84,7 @@ export const ConversationSchema = {
     'workspace_name',
   ],
   definitions: {
-    ChannelType: {
+    ConversationType: {
       type: 'string',
       enum: [
         'directMessage',
@@ -93,7 +93,7 @@ export const ConversationSchema = {
         'asyncMeeting',
       ],
     },
-    ChannelVisibility: {
+    ConversationVisibility: {
       type: 'string',
       enum: ['private', 'workspace', 'public'],
     },
