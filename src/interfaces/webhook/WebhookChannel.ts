@@ -1,5 +1,6 @@
+import { WebhookAsyncMeetingStats } from './WebhookAsyncMeetingStats';
+
 import { ChannelType, ChannelVisibility } from '../../enums/webhook';
-import { AsyncMeetingStats } from '../AsyncMeetingStats';
 
 export interface WebhookChannel {
   channel_guid: string;
@@ -17,7 +18,7 @@ export interface WebhookChannel {
   image_url?: string | null;
   is_private: boolean;
   is_async: boolean;
-  async_stats?: AsyncMeetingStats | null;
+  async_stats?: WebhookAsyncMeetingStats | null;
   created_at: string;
   last_updated_at: string;
   deleted_at?: string;
