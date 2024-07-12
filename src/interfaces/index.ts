@@ -7,3 +7,4 @@ export * from './webhook/SubscriptionFilter';
 export * from './Label';
 export * from './Attachment';
 export * from './User';
+export * from './webhook';
