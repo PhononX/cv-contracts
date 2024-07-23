@@ -1,4 +1,4 @@
 export enum CreateConversationMessageFromType {
   PreRecorded = 'PreRecorded',
-  NewMessage = 'NewMessage'
+  NewMessage = 'NewMessage',
 }
