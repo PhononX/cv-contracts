@@ -7,4 +7,4 @@ export * from './LabelType';
 export * from './AttachmentType';
 export * from './ElevenLabsSupportedLanguages';
 export * from './webhook';
-export * from './CreateConversationFromMessageType';
+export * from './CreateConversationFromType';
