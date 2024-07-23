@@ -4,6 +4,9 @@ export const MessageSchema = {
     id: {
       type: 'string',
     },
+    name: {
+      type: ['null', 'string'],
+    },
     link: {
       type: 'string',
     },
@@ -148,6 +151,7 @@ export const MessageSchema = {
 
 export enum MessageKeys {
   id = 'id',
+  name = 'name',
   link = 'link',
   creator_id = 'creator_id',
   conversation_id = 'conversation_id',
