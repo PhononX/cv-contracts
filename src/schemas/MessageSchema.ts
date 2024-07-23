@@ -70,6 +70,9 @@ export const MessageSchema = {
     type: {
       $ref: '#/definitions/MessageType',
     },
+    share_link_id: {
+      type: 'string',
+    },
   },
   additionalProperties: false,
   required: [
@@ -172,4 +175,5 @@ export enum MessageKeys {
   status = 'status',
   attachments = 'attachments',
   type = 'type',
+  share_link_id = 'share_link_id',
 }
