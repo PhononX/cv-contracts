@@ -5,6 +5,7 @@ import { MessageType } from '../enums/MessageType';
 
 export interface Message {
   id: string;
+  name?: string | null;
   link: string;
   creator_id: string;
   conversation_id?: string | null;
