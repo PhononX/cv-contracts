@@ -26,4 +26,5 @@ export interface Message {
   status: MessageStatus;
   attachments?: Attachment[];
   type: MessageType;
+  share_link_id?: string
 }
