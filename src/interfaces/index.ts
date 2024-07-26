@@ -8,3 +8,4 @@ export * from './Label';
 export * from './Attachment';
 export * from './User';
 export * from './webhook';
+export * from './AIPromptResponse';

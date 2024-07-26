@@ -8,3 +8,4 @@ export * from './AttachmentType';
 export * from './ElevenLabsSupportedLanguages';
 export * from './webhook';
 export * from './CreateConversationFromType';
+export * from './AIResponseFormat';
