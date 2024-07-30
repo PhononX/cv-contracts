@@ -1,6 +1,6 @@
-import { AIResponseFormat } from '../enums';
+import { AIResponseFormat } from '../../enums';
 
-export interface AIPromptResponse {
+export interface WebhookAIPromptResponse {
   id: string;
 
   creator_id: string;

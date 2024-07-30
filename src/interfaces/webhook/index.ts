@@ -15,3 +15,5 @@ export * from './WebhookWorkspaceUserRemoved';
 export * from './WorkspaceFindableChannelCreated';
 export * from './SubscribedUserSettings';
 export * from './SubscriptionFilter';
+export * from './WebhookAIPromptResponse';
+export * from './WebhookWorkspaceLevelAIPromptResponse';

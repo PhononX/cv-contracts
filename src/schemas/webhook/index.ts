@@ -1,5 +1,6 @@
 export * from './SubscribedUserSettingsSchema';
 export * from './SubscriptionFilterSchema';
+export * from './WebhookAIPromptResponseSchema';
 export * from './WebhookAsyncMeetingStatsSchema';
 export * from './WebhookBasicUserSchema';
 export * from './WebhookChannelSchema';
@@ -10,6 +11,7 @@ export * from './WebhookChannelUsersAddedSchema';
 export * from './WebhookMessageSchema';
 export * from './WebhookPayloadSchema';
 export * from './WebhookWorkspaceSchema';
+export * from './WebhookWorkspaceLevelAIPromptResponseSchema';
 export * from './WebhookWorkspaceUserAddedSchema';
 export * from './WebhookWorkspaceUserJoinedSchema';
 export * from './WebhookWorkspaceUserLeftSchema';
