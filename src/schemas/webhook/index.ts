@@ -12,6 +12,7 @@ export * from './WebhookMessageSchema';
 export * from './WebhookPayloadSchema';
 export * from './WebhookWorkspaceSchema';
 export * from './WebhookWorkspaceLevelAIPromptResponseSchema';
+export * from './WebhookWorkspaceLevelLabelAddedToMessageSchema';
 export * from './WebhookWorkspaceUserAddedSchema';
 export * from './WebhookWorkspaceUserJoinedSchema';
 export * from './WebhookWorkspaceUserLeftSchema';
