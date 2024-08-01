@@ -16,5 +16,4 @@ export * from './WorkspaceFindableChannelCreated';
 export * from './SubscribedUserSettings';
 export * from './SubscriptionFilter';
 export * from './WebhookAIPromptResponse';
-export * from './WebhookWorkspaceLevelAIPromptResponse';
-export * from './WebhookWorkspaceLevelLabelAddedToMessage';
+export * from './WebhookLabelAddedToMessage';
