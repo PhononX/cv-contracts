@@ -101,6 +101,7 @@ export const WebhookPayloadSchema = {
       type: 'string',
       enum: [
         'Message',
+        'MessageLabelAdded',
         'Channel',
         'ChannelUsersAdded',
         'ChannelUserJoined',
@@ -108,9 +109,12 @@ export const WebhookPayloadSchema = {
         'ChannelUserLeft',
         'Workspace',
         'WorkspaceUserJoined',
+        'WorkspaceUserAdded',
         'WorkspaceUserRemoved',
         'WorkspaceUserLeft',
         'WorkspaceFindableChannelCreated',
+        'AIPromptResponseGenerated',
+        'WorkspaceLevelAIPromptResponseGenerated',
       ],
     },
     Resource: {
