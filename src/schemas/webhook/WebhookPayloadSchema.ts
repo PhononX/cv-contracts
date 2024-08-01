@@ -115,6 +115,7 @@ export const WebhookPayloadSchema = {
         'WorkspaceFindableChannelCreated',
         'AIPromptResponseGenerated',
         'WorkspaceLevelAIPromptResponseGenerated',
+        'WorkspaceLevelMessageLabelAdded',
       ],
     },
     Resource: {
