@@ -1,5 +1,6 @@
 export enum ResourceType {
   Message = 'Message',
+  MessageLabelAdded = 'MessageLabelAdded',
   Channel = 'Channel',
   ChannelUsersAdded = 'ChannelUsersAdded',
   ChannelUserJoined = 'ChannelUserJoined',
@@ -7,7 +8,10 @@ export enum ResourceType {
   ChannelUserLeft = 'ChannelUserLeft',
   Workspace = 'Workspace',
   WorkspaceUserJoined = 'WorkspaceUserJoined',
+  WorkspaceUserAdded = 'WorkspaceUserAdded',
   WorkspaceUserRemoved = 'WorkspaceUserRemoved',
   WorkspaceUserLeft = 'WorkspaceUserLeft',
   WorkspaceFindableChannelCreated = 'WorkspaceFindableChannelCreated',
+  AIPromptResponseGenerated = 'AIPromptResponseGenerated',
+  WorkspaceLevelAIPromptResponseGenerated = 'WorkspaceLevelAIPromptResponseGenerated',
 }
