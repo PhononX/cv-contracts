@@ -5,5 +5,6 @@ export * from './ConversationSchema';
 export * from './GetMessageResponseSchema';
 export * from './LabelSchema';
 export * from './MessageSchema';
+export * from './ResponseByLanguageSchema';
 export * from './UserSchema';
 export * from './WorkspaceSchema';

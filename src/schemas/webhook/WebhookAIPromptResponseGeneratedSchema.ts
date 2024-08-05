@@ -33,10 +33,10 @@ export const WebhookAIPromptResponseGeneratedSchema = {
           type: 'string',
         },
         responses: {
-          $ref: '#/definitions/Record<string,string>',
-        },
-        response_format: {
-          $ref: '#/definitions/AIResponseFormat',
+          type: 'array',
+          items: {
+            $ref: '#/definitions/ResponseByLanguage',
+          },
         },
         message_ids: {
           type: 'array',
@@ -59,17 +59,34 @@ export const WebhookAIPromptResponseGeneratedSchema = {
         'last_updated_at',
         'message_ids',
         'prompt_id',
-        'response_format',
         'responses',
       ],
     },
-    'Record<string,string>': {
+    ResponseByLanguage: {
+      type: 'object',
+      properties: {
+        language: {
+          type: 'string',
+        },
+        json: {
+          $ref: '#/definitions/Record<string,unknown>',
+        },
+        text: {
+          type: 'string',
+        },
+        html: {
+          type: 'string',
+        },
+        markdown: {
+          type: 'string',
+        },
+      },
+      additionalProperties: false,
+      required: ['json', 'language'],
+    },
+    'Record<string,unknown>': {
       type: 'object',
       additionalProperties: false,
-    },
-    AIResponseFormat: {
-      type: 'string',
-      enum: ['text', 'json'],
     },
     GetMessageResponse: {
       type: 'object',

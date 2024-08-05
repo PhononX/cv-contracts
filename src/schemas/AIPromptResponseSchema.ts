@@ -17,10 +17,10 @@ export const AIPromptResponseSchema = {
       type: 'string',
     },
     responses: {
-      $ref: '#/definitions/Record<string,string>',
-    },
-    response_format: {
-      $ref: '#/definitions/AIResponseFormat',
+      type: 'array',
+      items: {
+        $ref: '#/definitions/ResponseByLanguage',
+      },
     },
     message_ids: {
       type: 'array',
@@ -43,17 +43,34 @@ export const AIPromptResponseSchema = {
     'last_updated_at',
     'message_ids',
     'prompt_id',
-    'response_format',
     'responses',
   ],
   definitions: {
-    'Record<string,string>': {
+    ResponseByLanguage: {
+      type: 'object',
+      properties: {
+        language: {
+          type: 'string',
+        },
+        json: {
+          $ref: '#/definitions/Record<string,unknown>',
+        },
+        text: {
+          type: 'string',
+        },
+        html: {
+          type: 'string',
+        },
+        markdown: {
+          type: 'string',
+        },
+      },
+      additionalProperties: false,
+      required: ['json', 'language'],
+    },
+    'Record<string,unknown>': {
       type: 'object',
       additionalProperties: false,
-    },
-    AIResponseFormat: {
-      type: 'string',
-      enum: ['text', 'json'],
     },
   },
   $schema: 'http://json-schema.org/draft-07/schema#',
@@ -66,7 +83,6 @@ export enum AIPromptResponseKeys {
   created_at = 'created_at',
   last_updated_at = 'last_updated_at',
   responses = 'responses',
-  response_format = 'response_format',
   message_ids = 'message_ids',
   workspace_id = 'workspace_id',
   channel_id = 'channel_id',
