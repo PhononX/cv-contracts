@@ -1,4 +1,4 @@
-import { AIResponseFormat } from '../enums';
+import { ResponseByLanguage } from './ResponseByLanguage';
 
 export interface AIPromptResponse {
   id: string;
@@ -11,9 +11,7 @@ export interface AIPromptResponse {
 
   last_updated_at: string;
 
-  responses: Record<string, string>;
-
-  response_format: AIResponseFormat;
+  responses: ResponseByLanguage[];
 
   message_ids: string[];
 
