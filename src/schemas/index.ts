@@ -8,3 +8,4 @@ export * from './MessageSchema';
 export * from './ResponseByLanguageSchema';
 export * from './UserSchema';
 export * from './WorkspaceSchema';
+export * from './webhook';

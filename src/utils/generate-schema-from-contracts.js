@@ -71,6 +71,7 @@ const generateSchemaFiles = () => {
   console.log('📢 Start generating schema files...');
   const allInterfaces = [];
   const filesByDirectory = {};
+  const foldersToExportIndexFiles = new Set();
 
   modelFiles.forEach(({ fullPath, relativePath }) => {
     const interfaceNames = extractInterfaceNames(fullPath);
@@ -100,6 +101,12 @@ const generateSchemaFiles = () => {
 
       // Group files by their directory
       const dir = path.dirname(outputFilePath);
+      const folderName = path.basename(dir);
+      // Add folder names to export index files, only if folder is not root one
+      if (folderName && !outputDir.includes(folderName)) {
+        foldersToExportIndexFiles.add(folderName);
+      }
+
       if (!filesByDirectory[dir]) {
         filesByDirectory[dir] = [];
       }
@@ -113,7 +120,24 @@ const generateSchemaFiles = () => {
     const exportStatements = files
       .map((file) => `export * from './${path.basename(file, '.ts')}';`)
       .join('\n');
-    fs.writeFileSync(path.resolve(dir, 'index.ts'), exportStatements);
+
+    // Include export all items inside index files for each folder inside root folder
+    let exportAllIndexFileds = '';
+    // Only export index files for folders that are not inside current folder
+    const foldersToExportNoInsideCurrentFolder = Array.from(
+      foldersToExportIndexFiles,
+    ).every((folderName) => !dir.includes(folderName));
+
+    if (foldersToExportNoInsideCurrentFolder) {
+      exportAllIndexFileds = Array.from(foldersToExportIndexFiles)
+        .map((folder) => `export * from './${folder}';`)
+        .join('\n');
+    }
+
+    fs.writeFileSync(
+      path.resolve(dir, 'index.ts'),
+      `${exportStatements}\n${exportAllIndexFileds}`,
+    );
   });
   // if (allInterfaces?.length) {
   //   fs.writeFileSync(
