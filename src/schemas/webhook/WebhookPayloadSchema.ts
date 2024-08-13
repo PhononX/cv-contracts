@@ -79,6 +79,7 @@ export const WebhookPayloadSchema = {
         'workspace.findable-channel.created',
         'access_token.expired',
         'refresh_token.expired',
+        'ai.prompt.response.generated',
       ],
     },
     SubscribedUserSettings: {
