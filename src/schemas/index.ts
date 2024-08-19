@@ -1,4 +1,5 @@
 export * from './AIPromptResponseSchema';
+export * from './AIShareLinkPromptResponseSchema';
 export * from './AsyncMeetingStatsSchema';
 export * from './AttachmentSchema';
 export * from './ConversationSchema';
