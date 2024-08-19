@@ -14,10 +14,4 @@ export interface AIShareLinkPromptResponse {
   responses: ResponseByLanguage[];
 
   share_link_ids: string[];
-
-  prompt_ids: string[];
-
-  workspace_id?: string;
-
-  channel_id?: string;
 }
