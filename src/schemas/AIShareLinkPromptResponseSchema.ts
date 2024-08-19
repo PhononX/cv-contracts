@@ -28,18 +28,6 @@ export const AIShareLinkPromptResponseSchema = {
         type: 'string',
       },
     },
-    prompt_ids: {
-      type: 'array',
-      items: {
-        type: 'string',
-      },
-    },
-    workspace_id: {
-      type: 'string',
-    },
-    channel_id: {
-      type: 'string',
-    },
   },
   additionalProperties: false,
   required: [
@@ -48,7 +36,6 @@ export const AIShareLinkPromptResponseSchema = {
     'id',
     'last_updated_at',
     'prompt_id',
-    'prompt_ids',
     'responses',
     'share_link_ids',
   ],
@@ -91,7 +78,4 @@ export enum AIShareLinkPromptResponseKeys {
   last_updated_at = 'last_updated_at',
   responses = 'responses',
   share_link_ids = 'share_link_ids',
-  prompt_ids = 'prompt_ids',
-  workspace_id = 'workspace_id',
-  channel_id = 'channel_id',
 }
