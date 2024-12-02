@@ -6,12 +6,17 @@ export const SubscriptionFilterSchema = {
     },
     value: {},
     operator: {
-      type: 'string',
-      const: 'eq',
+      $ref: '#/definitions/Operator',
     },
   },
   additionalProperties: false,
   required: ['key', 'operator', 'value'],
+  definitions: {
+    Operator: {
+      type: 'string',
+      enum: ['eq', 'ne'],
+    },
+  },
   $schema: 'http://json-schema.org/draft-07/schema#',
 };
 
