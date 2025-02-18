@@ -14,7 +14,7 @@ export const SubscriptionFilterSchema = {
   definitions: {
     Operator: {
       type: 'string',
-      enum: ['eq', 'ne'],
+      enum: ['eq', 'ne', 'in'],
     },
   },
   $schema: 'http://json-schema.org/draft-07/schema#',
