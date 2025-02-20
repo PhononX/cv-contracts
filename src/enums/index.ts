@@ -10,3 +10,4 @@ export * from './webhook';
 export * from './CreateConversationFromType';
 export * from './AIResponseFormat';
 export * from './AIPromptOwnerType';
+export * from './FolderType';
