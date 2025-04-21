@@ -9,4 +9,5 @@ export enum MessageStatus {
   INITIALIZING = 'initializing',
   INPROGRESS = 'inprogress',
   CANCELED = 'canceled',
+  FAILED = 'failed',
 }
