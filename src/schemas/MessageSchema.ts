@@ -100,6 +100,7 @@ export const MessageSchema = {
         'initializing',
         'inprogress',
         'canceled',
+        'failed',
       ],
     },
     Attachment: {

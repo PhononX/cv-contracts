@@ -177,6 +177,7 @@ export const WebhookLabelAddedToMessageSchema = {
         'initializing',
         'inprogress',
         'canceled',
+        'failed',
       ],
     },
     Attachment: {

@@ -122,6 +122,7 @@ export const GetMessageResponseSchema = {
         'initializing',
         'inprogress',
         'canceled',
+        'failed',
       ],
     },
     Attachment: {

@@ -94,6 +94,7 @@ export const WebhookMessageSchema = {
         'initializing',
         'inprogress',
         'canceled',
+        'failed',
       ],
     },
     Attachment: {

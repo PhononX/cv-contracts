@@ -212,6 +212,7 @@ export const WebhookAIPromptResponseGeneratedSchema = {
         'initializing',
         'inprogress',
         'canceled',
+        'failed',
       ],
     },
     Attachment: {
