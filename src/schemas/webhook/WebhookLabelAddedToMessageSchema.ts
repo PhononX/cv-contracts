@@ -220,7 +220,7 @@ export const WebhookLabelAddedToMessageSchema = {
     },
     AttachmentType: {
       type: 'string',
-      enum: ['link', 'file', 'location'],
+      enum: ['link', 'file', 'location', 'ai-response-id', 'ai-prompt-id'],
     },
     MessageType: {
       type: 'string',
