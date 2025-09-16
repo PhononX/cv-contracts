@@ -10,3 +10,4 @@ export * from './AIPromptResponse';
 export * from './GetMessageResponse';
 export * from './ResponseByLanguage';
 export * from './AIShareLinkPromptResponse';
+export * from './ActionItem';
