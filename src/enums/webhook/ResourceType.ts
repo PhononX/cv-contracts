@@ -15,4 +15,5 @@ export enum ResourceType {
   AIPromptResponseGenerated = 'AIPromptResponseGenerated',
   WorkspaceLevelAIPromptResponseGenerated = 'WorkspaceLevelAIPromptResponseGenerated',
   WorkspaceLevelMessageLabelAdded = 'WorkspaceLevelMessageLabelAdded',
+  ActionItem = 'ActionItem',
 }

@@ -81,6 +81,10 @@ export const WebhookPayloadSchema = {
         'access_token.expired',
         'refresh_token.expired',
         'ai.prompt.response.generated',
+        'action-item.created',
+        'action-item.updated',
+        'action-item.deleted',
+        'action-item.status.changed',
       ],
     },
     SubscribedUserSettings: {
@@ -118,6 +122,7 @@ export const WebhookPayloadSchema = {
         'AIPromptResponseGenerated',
         'WorkspaceLevelAIPromptResponseGenerated',
         'WorkspaceLevelMessageLabelAdded',
+        'ActionItem',
       ],
     },
     Resource: {

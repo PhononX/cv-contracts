@@ -40,4 +40,10 @@ export enum SubscriptionEvents {
 
   // AI Events
   AI_PROMPT_RESPONSE_GENERATED = 'ai.prompt.response.generated',
+
+  // Action Items
+  ACTION_ITEM_CREATED = 'action-item.created',
+  ACTION_ITEM_UPDATED = 'action-item.updated',
+  ACTION_ITEM_DELETED = 'action-item.deleted',
+  ACTION_ITEM_STATUS_CHANGED = 'action-item.status.changed',
 }

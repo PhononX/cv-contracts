@@ -11,3 +11,5 @@ export * from './CreateConversationFromType';
 export * from './AIResponseFormat';
 export * from './AIPromptOwnerType';
 export * from './FolderType';
+export * from './ActionItemStatus';
+export * from './ActionItemContainerType';
