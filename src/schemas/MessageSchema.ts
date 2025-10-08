@@ -143,7 +143,14 @@ export const MessageSchema = {
     },
     AttachmentType: {
       type: 'string',
-      enum: ['link', 'file', 'location', 'ai-response-id', 'ai-prompt-id'],
+      enum: [
+        'link',
+        'file',
+        'location',
+        'ai-response-id',
+        'ai-prompt-id',
+        'action-item-id',
+      ],
     },
     MessageType: {
       type: 'string',

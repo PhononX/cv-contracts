@@ -38,7 +38,14 @@ export const AttachmentSchema = {
   definitions: {
     AttachmentType: {
       type: 'string',
-      enum: ['link', 'file', 'location', 'ai-response-id', 'ai-prompt-id'],
+      enum: [
+        'link',
+        'file',
+        'location',
+        'ai-response-id',
+        'ai-prompt-id',
+        'action-item-id',
+      ],
     },
   },
   $schema: 'http://json-schema.org/draft-07/schema#',

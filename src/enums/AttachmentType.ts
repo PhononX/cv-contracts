@@ -4,4 +4,5 @@ export enum AttachmentType {
   Location = 'location',
   AiResponseId = 'ai-response-id',
   AiPromptId = 'ai-prompt-id',
+  ActionItemId = 'action-item-id',
 }
