@@ -13,3 +13,4 @@ export * from './AIPromptOwnerType';
 export * from './FolderType';
 export * from './ActionItemStatus';
 export * from './ActionItemContainerType';
+export * from './Role';
