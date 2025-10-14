@@ -92,7 +92,7 @@ export const MessageShareLinkSchema = {
     },
     SpecifiedAccessType: {
       type: 'string',
-      enum: ['user', 'channel', 'workspace'],
+      enum: ['user', 'channel', 'workspace', 'workspace_group'],
     },
     Message: {
       type: 'object',

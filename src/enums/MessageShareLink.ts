@@ -13,4 +13,5 @@ export enum SpecifiedAccessType {
   User = 'user',
   Channel = 'channel',
   Workspace = 'workspace',
+  WorkspaceGroup = 'workspace_group',
 }

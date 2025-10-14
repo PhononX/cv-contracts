@@ -16,7 +16,7 @@ export const SpecifiedAccessSchema = {
   definitions: {
     SpecifiedAccessType: {
       type: 'string',
-      enum: ['user', 'channel', 'workspace'],
+      enum: ['user', 'channel', 'workspace', 'workspace_group'],
     },
   },
   $schema: 'http://json-schema.org/draft-07/schema#',
