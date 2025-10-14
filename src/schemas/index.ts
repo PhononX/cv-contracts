@@ -7,6 +7,8 @@ export * from './ConversationSchema';
 export * from './GetMessageResponseSchema';
 export * from './LabelSchema';
 export * from './MessageSchema';
+export * from './SpecifiedAccessSchema';
+export * from './MessageShareLinkSchema';
 export * from './ResponseByLanguageSchema';
 export * from './UserSchema';
 export * from './WorkspaceSchema';

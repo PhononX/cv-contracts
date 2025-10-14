@@ -11,3 +11,4 @@ export * from './GetMessageResponse';
 export * from './ResponseByLanguage';
 export * from './AIShareLinkPromptResponse';
 export * from './ActionItem';
+export * from './MessageShareLink';
