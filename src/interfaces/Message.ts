@@ -1,7 +1,6 @@
 import { Attachment } from './Attachment';
 
-import { MessageStatus } from '../enums';
-import { MessageType } from '../enums/MessageType';
+import { MessageKind, MessageStatus, MessageType } from '../enums';
 
 export interface Message {
   id: string;
@@ -26,5 +25,6 @@ export interface Message {
   status: MessageStatus;
   attachments?: Attachment[];
   type: MessageType;
+  kind?: MessageKind | null;
   share_link_id?: string;
 }

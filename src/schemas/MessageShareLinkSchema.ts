@@ -166,6 +166,24 @@ export const MessageShareLinkSchema = {
         type: {
           $ref: '#/definitions/MessageType',
         },
+        kind: {
+          anyOf: [
+            {
+              enum: [
+                'action-item',
+                'ai-prompt',
+                'ai-response',
+                'attachment',
+                'audio',
+                'text',
+              ],
+              type: 'string',
+            },
+            {
+              type: 'null',
+            },
+          ],
+        },
         share_link_id: {
           type: 'string',
         },

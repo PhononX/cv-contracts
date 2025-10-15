@@ -70,6 +70,24 @@ export const MessageSchema = {
     type: {
       $ref: '#/definitions/MessageType',
     },
+    kind: {
+      anyOf: [
+        {
+          enum: [
+            'action-item',
+            'ai-prompt',
+            'ai-response',
+            'attachment',
+            'audio',
+            'text',
+          ],
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
+    },
     share_link_id: {
       type: 'string',
     },
@@ -183,5 +201,6 @@ export enum MessageKeys {
   status = 'status',
   attachments = 'attachments',
   type = 'type',
+  kind = 'kind',
   share_link_id = 'share_link_id',
 }
