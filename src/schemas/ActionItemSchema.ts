@@ -29,7 +29,7 @@ export const ActionItemSchema = {
       type: 'string',
     },
     container_type: {
-      enum: ['channel', 'folder'],
+      enum: ['channel', 'folder', 'home'],
       type: 'string',
     },
     source_message_id: {
