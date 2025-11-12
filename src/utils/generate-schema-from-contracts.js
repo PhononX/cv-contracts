@@ -81,10 +81,21 @@ const generateSchemaFiles = () => {
       const schema = TSJ.generateSchema(program, interfaceName, settings);
       if (!schema) return;
 
+      // Ensure index-signature-like objects explicitly state string keys
+      if (
+        schema &&
+        schema.type === 'object' &&
+        schema.additionalProperties &&
+        !schema.propertyNames
+      ) {
+        schema.propertyNames = { type: 'string' };
+      }
+
       const schemaString = JSON.stringify(schema, null, 2);
       const tsSchemaString = `export const ${interfaceName}${schemaName} = ${schemaString};`;
 
-      const allKeys = Object.keys(schema.properties);
+      const props = schema && schema.properties ? schema.properties : {};
+      const allKeys = Object.keys(props);
       let enumString = `export enum ${interfaceName}Keys {\n`;
       allKeys.forEach((key) => (enumString += `   ${key} = '${key}',\n`));
       enumString += `}`;
