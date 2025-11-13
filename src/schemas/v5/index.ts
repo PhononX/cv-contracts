@@ -9,3 +9,6 @@ export * from './ReactionSummarySchema';
 export * from './UserNotAllowedReceiveNotificationsSchema';
 export * from './AudioInfoSchema';
 export * from './MessageV5Schema';
+export * from './NotifiedMessageStatisticSchema';
+export * from './LabelStatisticSchema';
+export * from './StatisticsSchema';
