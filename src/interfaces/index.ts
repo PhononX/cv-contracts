@@ -12,3 +12,5 @@ export * from './ResponseByLanguage';
 export * from './AIShareLinkPromptResponse';
 export * from './ActionItem';
 export * from './MessageShareLink';
+export * from './MessageV3';
+export * from './AttachmentV2';
