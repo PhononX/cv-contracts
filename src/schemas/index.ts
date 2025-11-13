@@ -6,6 +6,7 @@ export * from './AttachmentSchema';
 export * from './AttachmentV2Schema';
 export * from './ConversationSchema';
 export * from './GetMessageResponseSchema';
+export * from './GetMessageResponseV2Schema';
 export * from './LabelSchema';
 export * from './MessageSchema';
 export * from './SpecifiedAccessSchema';
