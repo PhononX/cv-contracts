@@ -11,9 +11,15 @@ export interface Attachment {
 
   link: string;
 
+  active_begin?: string | null;
+
+  active_end?: string | null;
+
   filename?: string | null;
 
   mime_type?: string | null;
 
   length_in_bytes?: number | null;
+
+  location?: unknown | null;
 }

@@ -16,4 +16,3 @@ export * from './ActionItemContainerType';
 export * from './Role';
 export * from './MessageShareLink';
 export * from './MessageKind';
-export * from './MessageCaughtUpStatus';

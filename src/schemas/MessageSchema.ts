@@ -4,6 +4,69 @@ export const MessageSchema = {
     id: {
       type: 'string',
     },
+    name: {
+      type: ['null', 'string'],
+    },
+    link: {
+      type: 'string',
+    },
+    creator_id: {
+      type: 'string',
+    },
+    conversation_id: {
+      type: ['null', 'string'],
+    },
+    workspace_id: {
+      type: ['null', 'string'],
+    },
+    created_at: {
+      type: 'string',
+    },
+    last_updated_at: {
+      type: 'string',
+    },
+    deleted_at: {
+      type: ['null', 'string'],
+    },
+    duration_ms: {
+      type: 'number',
+    },
+    audio_url: {
+      type: ['null', 'string'],
+    },
+    audio_stream_url: {
+      type: ['null', 'string'],
+    },
+    transcript: {
+      type: ['null', 'string'],
+    },
+    ai_summary: {
+      type: ['null', 'string'],
+    },
+    has_ai_summary: {
+      type: 'boolean',
+    },
+    waveform_url: {
+      type: ['null', 'string'],
+    },
+    reply_count: {
+      type: 'number',
+    },
+    parent_message_id: {
+      type: ['null', 'string'],
+    },
+    language: {
+      type: ['null', 'string'],
+    },
+    status: {
+      $ref: '#/definitions/MessageStatus',
+    },
+    attachments: {
+      type: 'array',
+      items: {
+        $ref: '#/definitions/Attachment',
+      },
+    },
     type: {
       $ref: '#/definitions/MessageType',
     },
@@ -25,152 +88,23 @@ export const MessageSchema = {
         },
       ],
     },
-    created_at: {
-      type: 'string',
-    },
-    updated_at: {
-      type: 'string',
-    },
-    deleted_at: {
-      type: ['null', 'string'],
-    },
-    conversation_id: {
-      type: ['null', 'string'],
-    },
-    workspace_id: {
-      type: 'string',
-    },
-    creator_id: {
-      type: 'string',
-    },
-    status: {
-      $ref: '#/definitions/MessageStatus',
-    },
-    parent_message_id: {
-      type: ['null', 'string'],
-    },
-    attachments: {
-      type: 'array',
-      items: {
-        $ref: '#/definitions/Attachment',
-      },
-    },
-    language: {
-      type: ['null', 'string'],
-    },
-    is_original_language: {
-      type: ['null', 'boolean'],
-    },
-    transcript: {
-      type: ['null', 'string'],
-    },
-    ai_summary: {
-      type: ['null', 'string'],
-    },
-    ai_response_ids: {
-      type: 'array',
-      items: {
-        $ref: '#/definitions/MessageAIResponse',
-      },
-    },
     share_link_id: {
-      type: ['null', 'string'],
-    },
-    link: {
       type: 'string',
-    },
-    time_codes: {
-      type: 'array',
-      items: {
-        $ref: '#/definitions/MessageTimeCode',
-      },
-    },
-    waveform_percentages: {
-      type: 'array',
-      items: {
-        type: 'number',
-      },
-    },
-    folder_id: {
-      type: ['null', 'string'],
-    },
-    utm_data: {
-      anyOf: [
-        {
-          $ref: '#/definitions/UtmData',
-        },
-        {
-          type: 'null',
-        },
-      ],
-    },
-    conversation_sequence: {
-      type: ['null', 'number'],
-    },
-    source_message_id: {
-      type: ['null', 'string'],
-    },
-    audio: {
-      anyOf: [
-        {
-          $ref: '#/definitions/AudioInfo',
-        },
-        {
-          type: 'null',
-        },
-      ],
-    },
-    users_caught_up: {
-      anyOf: [
-        {
-          enum: ['all', 'none', 'some'],
-          type: 'string',
-        },
-        {
-          type: 'null',
-        },
-      ],
-    },
-    reaction_summary: {
-      anyOf: [
-        {
-          $ref: '#/definitions/ReactionSummary',
-        },
-        {
-          type: 'null',
-        },
-      ],
-    },
-    users_not_allowed_to_receive_notifications: {
-      anyOf: [
-        {
-          type: 'array',
-          items: {
-            $ref: '#/definitions/UserNotAllowedReceiveNotifications',
-          },
-        },
-        {
-          type: 'null',
-        },
-      ],
     },
   },
   additionalProperties: false,
   required: [
     'created_at',
     'creator_id',
+    'duration_ms',
     'id',
+    'last_updated_at',
     'link',
+    'reply_count',
     'status',
     'type',
-    'updated_at',
-    'workspace_id',
   ],
   definitions: {
-    MessageType: {
-      type: 'string',
-      enum: ['channel', 'prerecorded', 'voicememo', 'stored', 'welcome'],
-    },
     MessageStatus: {
       type: 'string',
       enum: [
@@ -205,6 +139,12 @@ export const MessageSchema = {
         link: {
           type: 'string',
         },
+        active_begin: {
+          type: ['null', 'string'],
+        },
+        active_end: {
+          type: ['null', 'string'],
+        },
         filename: {
           type: ['null', 'string'],
         },
@@ -214,6 +154,7 @@ export const MessageSchema = {
         length_in_bytes: {
           type: ['null', 'number'],
         },
+        location: {},
       },
       additionalProperties: false,
       required: ['created_at', 'creator_id', 'id', 'link', 'type'],
@@ -229,127 +170,9 @@ export const MessageSchema = {
         'action-item-id',
       ],
     },
-    MessageAIResponse: {
-      type: 'object',
-      properties: {
-        id: {
-          type: 'string',
-        },
-        prompt_id: {
-          type: 'string',
-        },
-      },
-      additionalProperties: false,
-      required: ['id', 'prompt_id'],
-    },
-    MessageTimeCode: {
-      type: 'object',
-      properties: {
-        t: {
-          type: 'string',
-        },
-        s: {
-          type: 'number',
-        },
-        e: {
-          type: 'number',
-        },
-      },
-      additionalProperties: false,
-      required: ['e', 's', 't'],
-    },
-    UtmData: {
-      type: 'object',
-      properties: {
-        utm_source: {
-          type: ['null', 'string'],
-        },
-        utm_medium: {
-          type: ['null', 'string'],
-        },
-        utm_campaign: {
-          type: ['null', 'string'],
-        },
-        utm_content: {
-          type: ['null', 'string'],
-        },
-        utm_term: {
-          type: ['null', 'string'],
-        },
-      },
-      additionalProperties: false,
-    },
-    AudioInfo: {
-      type: 'object',
-      properties: {
-        url: {
-          type: ['null', 'string'],
-        },
-        streaming_url: {
-          type: ['null', 'string'],
-        },
-        presigned_url: {
-          type: ['null', 'string'],
-        },
-        presigned_url_expiration_date: {
-          type: ['null', 'string'],
-        },
-        duration_ms: {
-          type: ['null', 'number'],
-        },
-      },
-      additionalProperties: false,
-    },
-    ReactionSummary: {
-      type: 'object',
-      properties: {
-        reaction_counts: {
-          $ref: '#/definitions/ReactionCounts',
-        },
-        top_user_reactions: {
-          type: 'array',
-          items: {
-            $ref: '#/definitions/UserReaction',
-          },
-        },
-      },
-      additionalProperties: false,
-      required: ['reaction_counts', 'top_user_reactions'],
-    },
-    ReactionCounts: {
-      type: 'object',
-      additionalProperties: {
-        type: 'number',
-      },
-    },
-    UserReaction: {
-      type: 'object',
-      properties: {
-        user_id: {
-          type: 'string',
-        },
-        reaction_id: {
-          type: 'string',
-        },
-      },
-      additionalProperties: false,
-      required: ['reaction_id', 'user_id'],
-    },
-    UserNotAllowedReceiveNotifications: {
-      type: 'object',
-      properties: {
-        user_id: {
-          type: 'string',
-        },
-        phone: {
-          type: 'string',
-        },
-        email: {
-          type: 'string',
-        },
-      },
-      additionalProperties: false,
-      required: ['user_id'],
+    MessageType: {
+      type: 'string',
+      enum: ['channel', 'prerecorded', 'voicememo', 'stored', 'welcome'],
     },
   },
   $schema: 'http://json-schema.org/draft-07/schema#',
@@ -357,32 +180,27 @@ export const MessageSchema = {
 
 export enum MessageKeys {
   id = 'id',
-  type = 'type',
-  kind = 'kind',
-  created_at = 'created_at',
-  updated_at = 'updated_at',
-  deleted_at = 'deleted_at',
+  name = 'name',
+  link = 'link',
+  creator_id = 'creator_id',
   conversation_id = 'conversation_id',
   workspace_id = 'workspace_id',
-  creator_id = 'creator_id',
-  status = 'status',
-  parent_message_id = 'parent_message_id',
-  attachments = 'attachments',
-  language = 'language',
-  is_original_language = 'is_original_language',
+  created_at = 'created_at',
+  last_updated_at = 'last_updated_at',
+  deleted_at = 'deleted_at',
+  duration_ms = 'duration_ms',
+  audio_url = 'audio_url',
+  audio_stream_url = 'audio_stream_url',
   transcript = 'transcript',
   ai_summary = 'ai_summary',
-  ai_response_ids = 'ai_response_ids',
+  has_ai_summary = 'has_ai_summary',
+  waveform_url = 'waveform_url',
+  reply_count = 'reply_count',
+  parent_message_id = 'parent_message_id',
+  language = 'language',
+  status = 'status',
+  attachments = 'attachments',
+  type = 'type',
+  kind = 'kind',
   share_link_id = 'share_link_id',
-  link = 'link',
-  time_codes = 'time_codes',
-  waveform_percentages = 'waveform_percentages',
-  folder_id = 'folder_id',
-  utm_data = 'utm_data',
-  conversation_sequence = 'conversation_sequence',
-  source_message_id = 'source_message_id',
-  audio = 'audio',
-  users_caught_up = 'users_caught_up',
-  reaction_summary = 'reaction_summary',
-  users_not_allowed_to_receive_notifications = 'users_not_allowed_to_receive_notifications',
 }
