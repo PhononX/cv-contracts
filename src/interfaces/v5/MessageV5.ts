@@ -1,11 +1,11 @@
-import { AttachmentV2 } from './AttachmentV2';
+import { AttachmentV5 } from './AttachmentV5';
 
 import {
   MessageCaughtUpStatus,
   MessageKind,
   MessageStatus,
   MessageType,
-} from '../enums';
+} from '../../enums';
 
 export interface MessageAIResponse {
   id: string;
@@ -54,7 +54,7 @@ export interface AudioInfo {
   duration_ms?: number | null;
 }
 
-export interface MessageV3 {
+export interface MessageV5 {
   id: string;
   type: MessageType;
   kind?: MessageKind | null;
@@ -66,7 +66,7 @@ export interface MessageV3 {
   creator_id: string;
   status: MessageStatus;
   parent_message_id?: string | null;
-  attachments?: AttachmentV2[];
+  attachments?: AttachmentV5[];
   language?: string | null;
   is_original_language?: boolean | null;
   transcript?: string | null;

@@ -1,6 +1,6 @@
-import { AttachmentType } from '../enums';
+import { AttachmentType } from '../../enums';
 
-export interface AttachmentV2 {
+export interface AttachmentV5 {
   id: string;
 
   creator_id: string;
