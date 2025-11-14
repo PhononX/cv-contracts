@@ -70,6 +70,7 @@ export interface MessageV5 {
   attachments?: AttachmentV5[];
   language?: string | null;
   is_original_language?: boolean | null;
+  available_languages?: string[] | null;
   transcript?: string | null;
   ai_summary?: string | null;
   ai_response_ids?: MessageAIResponse[];

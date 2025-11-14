@@ -61,6 +61,19 @@ export const MessageV5Schema = {
     is_original_language: {
       type: ['null', 'boolean'],
     },
+    available_languages: {
+      anyOf: [
+        {
+          type: 'array',
+          items: {
+            type: 'string',
+          },
+        },
+        {
+          type: 'null',
+        },
+      ],
+    },
     transcript: {
       type: ['null', 'string'],
     },
@@ -370,6 +383,7 @@ export enum MessageV5Keys {
   attachments = 'attachments',
   language = 'language',
   is_original_language = 'is_original_language',
+  available_languages = 'available_languages',
   transcript = 'transcript',
   ai_summary = 'ai_summary',
   ai_response_ids = 'ai_response_ids',

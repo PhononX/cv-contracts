@@ -71,6 +71,19 @@ export const GetMessageResponseV5Schema = {
         is_original_language: {
           type: ['null', 'boolean'],
         },
+        available_languages: {
+          anyOf: [
+            {
+              type: 'array',
+              items: {
+                type: 'string',
+              },
+            },
+            {
+              type: 'null',
+            },
+          ],
+        },
         transcript: {
           type: ['null', 'string'],
         },
