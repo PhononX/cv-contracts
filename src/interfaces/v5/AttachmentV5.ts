@@ -9,7 +9,11 @@ export interface AttachmentV5 {
 
   type: AttachmentType;
 
-  link: string;
+  url: string;
+
+  presigned_url?: string | null;
+
+  presigned_url_expiration_date?: string | null;
 
   filename?: string | null;
 

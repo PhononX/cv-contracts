@@ -13,8 +13,14 @@ export const AttachmentV5Schema = {
     type: {
       $ref: '#/definitions/AttachmentType',
     },
-    link: {
+    url: {
       type: 'string',
+    },
+    presigned_url: {
+      type: ['null', 'string'],
+    },
+    presigned_url_expiration_date: {
+      type: ['null', 'string'],
     },
     filename: {
       type: ['null', 'string'],
@@ -27,7 +33,7 @@ export const AttachmentV5Schema = {
     },
   },
   additionalProperties: false,
-  required: ['created_at', 'creator_id', 'id', 'link', 'type'],
+  required: ['created_at', 'creator_id', 'id', 'type', 'url'],
   definitions: {
     AttachmentType: {
       type: 'string',
@@ -49,7 +55,9 @@ export enum AttachmentV5Keys {
   creator_id = 'creator_id',
   created_at = 'created_at',
   type = 'type',
-  link = 'link',
+  url = 'url',
+  presigned_url = 'presigned_url',
+  presigned_url_expiration_date = 'presigned_url_expiration_date',
   filename = 'filename',
   mime_type = 'mime_type',
   length_in_bytes = 'length_in_bytes',

@@ -209,8 +209,14 @@ export const MessageV5Schema = {
         type: {
           $ref: '#/definitions/AttachmentType',
         },
-        link: {
+        url: {
           type: 'string',
+        },
+        presigned_url: {
+          type: ['null', 'string'],
+        },
+        presigned_url_expiration_date: {
+          type: ['null', 'string'],
         },
         filename: {
           type: ['null', 'string'],
@@ -223,7 +229,7 @@ export const MessageV5Schema = {
         },
       },
       additionalProperties: false,
-      required: ['created_at', 'creator_id', 'id', 'link', 'type'],
+      required: ['created_at', 'creator_id', 'id', 'type', 'url'],
     },
     AttachmentType: {
       type: 'string',
