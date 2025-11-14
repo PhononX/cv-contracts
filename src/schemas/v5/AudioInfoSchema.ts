@@ -16,6 +16,12 @@ export const AudioInfoSchema = {
     duration_ms: {
       type: ['null', 'number'],
     },
+    waveform_percentages: {
+      type: 'array',
+      items: {
+        type: 'number',
+      },
+    },
   },
   additionalProperties: false,
   $schema: 'http://json-schema.org/draft-07/schema#',
@@ -27,4 +33,5 @@ export enum AudioInfoKeys {
   presigned_url = 'presigned_url',
   presigned_url_expiration_date = 'presigned_url_expiration_date',
   duration_ms = 'duration_ms',
+  waveform_percentages = 'waveform_percentages',
 }

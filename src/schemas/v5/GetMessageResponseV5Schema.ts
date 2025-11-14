@@ -95,12 +95,6 @@ export const GetMessageResponseV5Schema = {
             $ref: '#/definitions/MessageTimeCode',
           },
         },
-        waveform_percentages: {
-          type: 'array',
-          items: {
-            type: 'number',
-          },
-        },
         folder_id: {
           type: ['null', 'string'],
         },
@@ -306,6 +300,12 @@ export const GetMessageResponseV5Schema = {
         },
         duration_ms: {
           type: ['null', 'number'],
+        },
+        waveform_percentages: {
+          type: 'array',
+          items: {
+            type: 'number',
+          },
         },
       },
       additionalProperties: false,

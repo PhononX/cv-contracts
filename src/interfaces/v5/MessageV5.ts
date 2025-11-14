@@ -52,6 +52,7 @@ export interface AudioInfo {
   presigned_url?: string | null;
   presigned_url_expiration_date?: string | null;
   duration_ms?: number | null;
+  waveform_percentages?: number[];
 }
 
 export interface MessageV5 {
@@ -75,7 +76,6 @@ export interface MessageV5 {
   share_link_id?: string | null;
   link: string;
   time_codes?: MessageTimeCode[];
-  waveform_percentages?: number[];
   folder_id?: string | null;
   utm_data?: UtmData | null;
   conversation_sequence?: number | null;

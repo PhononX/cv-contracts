@@ -85,12 +85,6 @@ export const MessageV5Schema = {
         $ref: '#/definitions/MessageTimeCode',
       },
     },
-    waveform_percentages: {
-      type: 'array',
-      items: {
-        type: 'number',
-      },
-    },
     folder_id: {
       type: ['null', 'string'],
     },
@@ -297,6 +291,12 @@ export const MessageV5Schema = {
         duration_ms: {
           type: ['null', 'number'],
         },
+        waveform_percentages: {
+          type: 'array',
+          items: {
+            type: 'number',
+          },
+        },
       },
       additionalProperties: false,
     },
@@ -376,7 +376,6 @@ export enum MessageV5Keys {
   share_link_id = 'share_link_id',
   link = 'link',
   time_codes = 'time_codes',
-  waveform_percentages = 'waveform_percentages',
   folder_id = 'folder_id',
   utm_data = 'utm_data',
   conversation_sequence = 'conversation_sequence',
