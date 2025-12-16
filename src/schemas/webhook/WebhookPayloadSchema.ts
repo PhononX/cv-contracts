@@ -85,6 +85,7 @@ export const WebhookPayloadSchema = {
         'action-item.updated',
         'action-item.deleted',
         'action-item.status.changed',
+        'channel-reminder',
       ],
     },
     SubscribedUserSettings: {
@@ -123,6 +124,7 @@ export const WebhookPayloadSchema = {
         'WorkspaceLevelAIPromptResponseGenerated',
         'WorkspaceLevelMessageLabelAdded',
         'ActionItem',
+        'ChannelReminder',
       ],
     },
     Resource: {

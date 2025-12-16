@@ -156,6 +156,7 @@ export const WebhookLabelAddedToMessageSchema = {
                 'ai-response',
                 'attachment',
                 'audio',
+                'channel-reminder',
                 'text',
               ],
               type: 'string',

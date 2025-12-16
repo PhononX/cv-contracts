@@ -79,6 +79,7 @@ export const MessageSchema = {
             'ai-response',
             'attachment',
             'audio',
+            'channel-reminder',
             'text',
           ],
           type: 'string',

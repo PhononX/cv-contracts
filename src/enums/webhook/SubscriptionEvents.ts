@@ -46,4 +46,7 @@ export enum SubscriptionEvents {
   ACTION_ITEM_UPDATED = 'action-item.updated',
   ACTION_ITEM_DELETED = 'action-item.deleted',
   ACTION_ITEM_STATUS_CHANGED = 'action-item.status.changed',
+
+  // Channel Reminders
+  CHANNEL_REMINDER = 'channel-reminder',
 }

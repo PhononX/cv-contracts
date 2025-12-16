@@ -175,6 +175,7 @@ export const MessageShareLinkSchema = {
                 'ai-response',
                 'attachment',
                 'audio',
+                'channel-reminder',
                 'text',
               ],
               type: 'string',

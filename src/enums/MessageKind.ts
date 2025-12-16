@@ -5,4 +5,5 @@ export enum MessageKind {
   ActionItem = 'action-item',
   AiPrompt = 'ai-prompt',
   AiResponse = 'ai-response',
+  ChannelReminder = 'channel-reminder',
 }

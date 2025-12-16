@@ -26,6 +26,7 @@ export const GetMessageResponseV5Schema = {
                 'ai-response',
                 'attachment',
                 'audio',
+                'channel-reminder',
                 'text',
               ],
               type: 'string',

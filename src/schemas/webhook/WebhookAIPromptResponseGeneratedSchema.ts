@@ -191,6 +191,7 @@ export const WebhookAIPromptResponseGeneratedSchema = {
                 'ai-response',
                 'attachment',
                 'audio',
+                'channel-reminder',
                 'text',
               ],
               type: 'string',
