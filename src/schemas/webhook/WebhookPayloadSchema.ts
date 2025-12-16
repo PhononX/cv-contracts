@@ -85,7 +85,6 @@ export const WebhookPayloadSchema = {
         'action-item.updated',
         'action-item.deleted',
         'action-item.status.changed',
-        'channel-reminder',
       ],
     },
     SubscribedUserSettings: {
