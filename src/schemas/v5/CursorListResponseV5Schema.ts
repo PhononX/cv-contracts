@@ -1,20 +1,30 @@
 export const CursorListResponseV5Schema = {
   type: 'object',
   properties: {
+    has_more: {
+      type: 'boolean',
+    },
+    next_cursor: {
+      type: ['null', 'string'],
+    },
+    total: {
+      type: ['null', 'number'],
+    },
     results: {
       type: 'array',
       items: {
         $ref: '#/definitions/T',
       },
     },
-    next_cursor: {
-      type: ['null', 'string'],
-    },
-    has_more: {
-      type: 'boolean',
-    },
-    total: {
-      type: ['null', 'number'],
+    filters: {
+      anyOf: [
+        {
+          $ref: '#/definitions/F',
+        },
+        {
+          type: 'null',
+        },
+      ],
     },
   },
   additionalProperties: false,
@@ -24,13 +34,18 @@ export const CursorListResponseV5Schema = {
       type: 'object',
       additionalProperties: false,
     },
+    F: {
+      type: 'object',
+      additionalProperties: false,
+    },
   },
   $schema: 'http://json-schema.org/draft-07/schema#',
 };
 
 export enum CursorListResponseV5Keys {
-  results = 'results',
-  next_cursor = 'next_cursor',
   has_more = 'has_more',
+  next_cursor = 'next_cursor',
   total = 'total',
+  results = 'results',
+  filters = 'filters',
 }
