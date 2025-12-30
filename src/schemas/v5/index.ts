@@ -1,4 +1,6 @@
 export * from './AttachmentV5Schema';
+export * from './BaseCursorListQuerySchema';
+export * from './CursorListResponseV5Schema';
 export * from './GetMessageResponseV5Schema';
 export * from './MessageAIResponseSchema';
 export * from './MessageTimeCodeSchema';
@@ -12,3 +14,5 @@ export * from './MessageV5Schema';
 export * from './NotifiedMessageStatisticSchema';
 export * from './LabelStatisticSchema';
 export * from './StatisticsSchema';
+export * from './WorkspacePhoneV5Schema';
+export * from './WorkspaceV5Schema';
