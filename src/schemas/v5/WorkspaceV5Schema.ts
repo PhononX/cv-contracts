@@ -7,6 +7,9 @@ export const WorkspaceV5Schema = {
     name: {
       type: 'string',
     },
+    vanity_name: {
+      type: ['null', 'string'],
+    },
     description: {
       type: ['null', 'string'],
     },
@@ -156,6 +159,7 @@ export const WorkspaceV5Schema = {
 export enum WorkspaceV5Keys {
   id = 'id',
   name = 'name',
+  vanity_name = 'vanity_name',
   description = 'description',
   image_url = 'image_url',
   type = 'type',

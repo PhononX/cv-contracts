@@ -12,6 +12,7 @@ export type DomainReferralMode = string;
 export interface WorkspaceV5 {
   id: string;
   name: string;
+  vanity_name?: string | null;
   description?: string | null;
   image_url?: string | null;
   type?: WorkspaceType | null;
