@@ -4,6 +4,11 @@ export const SubscribedUserSettingsSchema = {
     userId: {
       type: 'string',
     },
+    user_id: {
+      description:
+        'Preferred user identifier. Same type and optionality as `userId`.',
+      type: 'string',
+    },
     defaultLanguage: {
       type: 'string',
     },
@@ -12,12 +17,13 @@ export const SubscribedUserSettingsSchema = {
     },
   },
   additionalProperties: false,
-  required: ['userId'],
+  required: ['userId', 'user_id'],
   $schema: 'http://json-schema.org/draft-07/schema#',
 };
 
 export enum SubscribedUserSettingsKeys {
   userId = 'userId',
+  user_id = 'user_id',
   defaultLanguage = 'defaultLanguage',
   timezone = 'timezone',
 }

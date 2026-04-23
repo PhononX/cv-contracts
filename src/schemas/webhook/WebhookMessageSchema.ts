@@ -4,16 +4,36 @@ export const WebhookMessageSchema = {
     message_guid: {
       type: 'string',
     },
+    id: {
+      description:
+        'Preferred message identifier. Same type and optionality as `message_guid`.',
+      type: 'string',
+    },
     self_link: {
       type: 'string',
     },
     creator_guid: {
       type: 'string',
     },
+    creator_id: {
+      description:
+        'Preferred creator user identifier. Same type and optionality as `creator_guid`.',
+      type: 'string',
+    },
     channel_guid: {
       type: ['null', 'string'],
     },
+    channel_id: {
+      description:
+        'Preferred channel identifier. Same type and optionality as `channel_guid`.',
+      type: ['null', 'string'],
+    },
     workspace_guid: {
+      type: ['null', 'string'],
+    },
+    workspace_id: {
+      description:
+        'Preferred workspace identifier. Same type and optionality as `workspace_guid`.',
       type: ['null', 'string'],
     },
     created_at: {
@@ -52,6 +72,11 @@ export const WebhookMessageSchema = {
     parent_message_guid: {
       type: ['null', 'string'],
     },
+    parent_message_id: {
+      description:
+        'Preferred parent message identifier. Same type and optionality as `parent_message_guid`.',
+      type: ['null', 'string'],
+    },
     language: {
       type: ['null', 'string'],
     },
@@ -67,12 +92,39 @@ export const WebhookMessageSchema = {
     type: {
       $ref: '#/definitions/MessageType',
     },
+    kind: {
+      anyOf: [
+        {
+          enum: [
+            'action-item',
+            'ai-prompt',
+            'ai-response',
+            'attachment',
+            'audio',
+            'channel-reminder',
+            'text',
+          ],
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
+    },
+    share_link_id: {
+      type: ['null', 'string'],
+    },
+    folder_id: {
+      type: ['null', 'string'],
+    },
   },
   additionalProperties: false,
   required: [
     'created_at',
     'creator_guid',
+    'creator_id',
     'duration_ms',
+    'id',
     'last_updated_at',
     'message_guid',
     'reply_count',
@@ -156,10 +208,14 @@ export const WebhookMessageSchema = {
 
 export enum WebhookMessageKeys {
   message_guid = 'message_guid',
+  id = 'id',
   self_link = 'self_link',
   creator_guid = 'creator_guid',
+  creator_id = 'creator_id',
   channel_guid = 'channel_guid',
+  channel_id = 'channel_id',
   workspace_guid = 'workspace_guid',
+  workspace_id = 'workspace_id',
   created_at = 'created_at',
   last_updated_at = 'last_updated_at',
   deleted_at = 'deleted_at',
@@ -172,8 +228,12 @@ export enum WebhookMessageKeys {
   waveform_url = 'waveform_url',
   reply_count = 'reply_count',
   parent_message_guid = 'parent_message_guid',
+  parent_message_id = 'parent_message_id',
   language = 'language',
   status = 'status',
   attachments = 'attachments',
   type = 'type',
+  kind = 'kind',
+  share_link_id = 'share_link_id',
+  folder_id = 'folder_id',
 }

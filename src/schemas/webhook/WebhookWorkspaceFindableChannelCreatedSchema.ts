@@ -17,16 +17,36 @@ export const WebhookWorkspaceFindableChannelCreatedSchema = {
         channel_guid: {
           type: 'string',
         },
+        id: {
+          description:
+            'Preferred channel identifier. Same type and optionality as `channel_guid`.',
+          type: 'string',
+        },
         self_link: {
           type: 'string',
         },
         channel_name: {
           type: 'string',
         },
+        name: {
+          description:
+            'Preferred channel display name. Same type and optionality as `channel_name`.',
+          type: 'string',
+        },
         channel_description: {
           type: ['null', 'string'],
         },
+        description: {
+          description:
+            'Preferred channel description. Same type and optionality as `channel_description`.',
+          type: ['null', 'string'],
+        },
         workspace_guid: {
+          type: 'string',
+        },
+        workspace_id: {
+          description:
+            'Preferred workspace identifier. Same type and optionality as `workspace_guid`.',
           type: 'string',
         },
         workspace_name: {
@@ -36,6 +56,11 @@ export const WebhookWorkspaceFindableChannelCreatedSchema = {
           type: ['null', 'string'],
         },
         owner_guid: {
+          type: 'string',
+        },
+        creator_id: {
+          description:
+            'Preferred channel creator identifier. Same type and optionality as `owner_guid`.',
           type: 'string',
         },
         type: {
@@ -84,9 +109,12 @@ export const WebhookWorkspaceFindableChannelCreatedSchema = {
         'channel_guid',
         'channel_name',
         'created_at',
+        'creator_id',
+        'id',
         'is_async',
         'is_private',
         'last_updated_at',
+        'name',
         'owner_guid',
         'self_link',
         'total_duration_ms',
@@ -94,6 +122,7 @@ export const WebhookWorkspaceFindableChannelCreatedSchema = {
         'type',
         'visibility',
         'workspace_guid',
+        'workspace_id',
         'workspace_name',
       ],
     },
@@ -190,10 +219,25 @@ export const WebhookWorkspaceFindableChannelCreatedSchema = {
         workspace_guid: {
           type: 'string',
         },
+        id: {
+          description:
+            'Preferred workspace identifier. Same type and optionality as `workspace_guid`.',
+          type: 'string',
+        },
         workspace_name: {
           type: 'string',
         },
+        name: {
+          description:
+            'Preferred workspace display name. Same type and optionality as `workspace_name`.',
+          type: 'string',
+        },
         workspace_description: {
+          type: ['null', 'string'],
+        },
+        description: {
+          description:
+            'Preferred workspace description. Same type and optionality as `workspace_description`.',
           type: ['null', 'string'],
         },
         image_url: {
@@ -202,10 +246,25 @@ export const WebhookWorkspaceFindableChannelCreatedSchema = {
         owner_guid: {
           type: 'string',
         },
+        creator_id: {
+          description:
+            'Preferred owner/creator user identifier. Same type and optionality as `owner_guid`.',
+          type: 'string',
+        },
         owner_first_name: {
           type: 'string',
         },
+        creator_first_name: {
+          description:
+            'Preferred creator given name. Same type and optionality as `owner_first_name`.',
+          type: 'string',
+        },
         owner_last_name: {
+          type: 'string',
+        },
+        creator_last_name: {
+          description:
+            'Preferred creator family name. Same type and optionality as `owner_last_name`.',
           type: 'string',
         },
         created_at: {
@@ -221,7 +280,12 @@ export const WebhookWorkspaceFindableChannelCreatedSchema = {
       additionalProperties: false,
       required: [
         'created_at',
+        'creator_first_name',
+        'creator_id',
+        'creator_last_name',
+        'id',
         'last_updated_at',
+        'name',
         'owner_first_name',
         'owner_guid',
         'owner_last_name',

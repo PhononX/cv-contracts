@@ -93,6 +93,11 @@ export const WebhookPayloadSchema = {
         userId: {
           type: 'string',
         },
+        user_id: {
+          description:
+            'Preferred user identifier. Same type and optionality as `userId`.',
+          type: 'string',
+        },
         defaultLanguage: {
           type: 'string',
         },
@@ -101,7 +106,7 @@ export const WebhookPayloadSchema = {
         },
       },
       additionalProperties: false,
-      required: ['userId'],
+      required: ['userId', 'user_id'],
     },
     ResourceType: {
       type: 'string',

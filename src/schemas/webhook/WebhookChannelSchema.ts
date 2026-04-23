@@ -4,16 +4,36 @@ export const WebhookChannelSchema = {
     channel_guid: {
       type: 'string',
     },
+    id: {
+      description:
+        'Preferred channel identifier. Same type and optionality as `channel_guid`.',
+      type: 'string',
+    },
     self_link: {
       type: 'string',
     },
     channel_name: {
       type: 'string',
     },
+    name: {
+      description:
+        'Preferred channel display name. Same type and optionality as `channel_name`.',
+      type: 'string',
+    },
     channel_description: {
       type: ['null', 'string'],
     },
+    description: {
+      description:
+        'Preferred channel description. Same type and optionality as `channel_description`.',
+      type: ['null', 'string'],
+    },
     workspace_guid: {
+      type: 'string',
+    },
+    workspace_id: {
+      description:
+        'Preferred workspace identifier. Same type and optionality as `workspace_guid`.',
       type: 'string',
     },
     workspace_name: {
@@ -23,6 +43,11 @@ export const WebhookChannelSchema = {
       type: ['null', 'string'],
     },
     owner_guid: {
+      type: 'string',
+    },
+    creator_id: {
+      description:
+        'Preferred channel creator identifier. Same type and optionality as `owner_guid`.',
       type: 'string',
     },
     type: {
@@ -71,9 +96,12 @@ export const WebhookChannelSchema = {
     'channel_guid',
     'channel_name',
     'created_at',
+    'creator_id',
+    'id',
     'is_async',
     'is_private',
     'last_updated_at',
+    'name',
     'owner_guid',
     'self_link',
     'total_duration_ms',
@@ -81,6 +109,7 @@ export const WebhookChannelSchema = {
     'type',
     'visibility',
     'workspace_guid',
+    'workspace_id',
     'workspace_name',
   ],
   definitions: {
@@ -177,13 +206,18 @@ export const WebhookChannelSchema = {
 
 export enum WebhookChannelKeys {
   channel_guid = 'channel_guid',
+  id = 'id',
   self_link = 'self_link',
   channel_name = 'channel_name',
+  name = 'name',
   channel_description = 'channel_description',
+  description = 'description',
   workspace_guid = 'workspace_guid',
+  workspace_id = 'workspace_id',
   workspace_name = 'workspace_name',
   workspace_image_url = 'workspace_image_url',
   owner_guid = 'owner_guid',
+  creator_id = 'creator_id',
   type = 'type',
   visibility = 'visibility',
   total_messages = 'total_messages',

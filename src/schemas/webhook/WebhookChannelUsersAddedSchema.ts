@@ -23,16 +23,36 @@ export const WebhookChannelUsersAddedSchema = {
         channel_guid: {
           type: 'string',
         },
+        id: {
+          description:
+            'Preferred channel identifier. Same type and optionality as `channel_guid`.',
+          type: 'string',
+        },
         self_link: {
           type: 'string',
         },
         channel_name: {
           type: 'string',
         },
+        name: {
+          description:
+            'Preferred channel display name. Same type and optionality as `channel_name`.',
+          type: 'string',
+        },
         channel_description: {
           type: ['null', 'string'],
         },
+        description: {
+          description:
+            'Preferred channel description. Same type and optionality as `channel_description`.',
+          type: ['null', 'string'],
+        },
         workspace_guid: {
+          type: 'string',
+        },
+        workspace_id: {
+          description:
+            'Preferred workspace identifier. Same type and optionality as `workspace_guid`.',
           type: 'string',
         },
         workspace_name: {
@@ -42,6 +62,11 @@ export const WebhookChannelUsersAddedSchema = {
           type: ['null', 'string'],
         },
         owner_guid: {
+          type: 'string',
+        },
+        creator_id: {
+          description:
+            'Preferred channel creator identifier. Same type and optionality as `owner_guid`.',
           type: 'string',
         },
         type: {
@@ -90,9 +115,12 @@ export const WebhookChannelUsersAddedSchema = {
         'channel_guid',
         'channel_name',
         'created_at',
+        'creator_id',
+        'id',
         'is_async',
         'is_private',
         'last_updated_at',
+        'name',
         'owner_guid',
         'self_link',
         'total_duration_ms',
@@ -100,6 +128,7 @@ export const WebhookChannelUsersAddedSchema = {
         'type',
         'visibility',
         'workspace_guid',
+        'workspace_id',
         'workspace_name',
       ],
     },
@@ -196,6 +225,11 @@ export const WebhookChannelUsersAddedSchema = {
         user_guid: {
           type: 'string',
         },
+        id: {
+          description:
+            'Preferred user identifier. Same type and optionality as `user_guid`.',
+          type: 'string',
+        },
         first_name: {
           type: 'string',
         },
@@ -204,7 +238,7 @@ export const WebhookChannelUsersAddedSchema = {
         },
       },
       additionalProperties: false,
-      required: ['first_name', 'last_name', 'user_guid'],
+      required: ['first_name', 'id', 'last_name', 'user_guid'],
     },
   },
   $schema: 'http://json-schema.org/draft-07/schema#',
