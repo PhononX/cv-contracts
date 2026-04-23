@@ -29,11 +29,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v6
 
+      # Do not set registry-url here: it writes an auth-based ~/.npmrc that breaks OIDC publish (ENEEDAUTH).
+      # Public installs use the default registry without a token.
       - name: Set up Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v6
         with:
           node-version: ${{ matrix.node-version }}
-          registry-url: https://registry.npmjs.org
 
       - name: Install dependencies
         run: npm install
@@ -51,13 +52,17 @@ jobs:
           npm version patch -m "Bump to %s [skip ci]"
           git push --follow-tags
 
-      # Use npm 11.5.1+ for OIDC without `npm install -g` (global upgrade can corrupt the runner npm install)
+      # npm 11.5.1+ for OIDC; use an npmrc with registry only (no _authToken) so the CLI uses trusted publishing.
+      # Shell-unset NODE_AUTH_TOKEN in case org/repo env injects it — empty token + auth npmrc prevents OIDC.
       - name: Publish to npm (OIDC)
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-        env:
-          # Prefer OIDC; if the repo defines NODE_AUTH_TOKEN for installs, empty it here so publish does not use a stale token
-          NODE_AUTH_TOKEN: ""
-        run: npx --yes npm@11.5.1 publish
+        run: |
+          set -euo pipefail
+          NPMRC_OIDC="${RUNNER_TEMP}/npm-oidc-publish.rc"
+          printf '%s\n' 'registry=https://registry.npmjs.org/' > "${NPMRC_OIDC}"
+          export NPM_CONFIG_USERCONFIG="${NPMRC_OIDC}"
+          unset NODE_AUTH_TOKEN || true
+          npx --yes npm@11.5.1 publish
 
       - name: Get version
         id: package
