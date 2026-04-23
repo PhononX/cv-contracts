@@ -52,16 +52,24 @@ jobs:
           npm version patch -m "Bump to %s [skip ci]"
           git push --follow-tags
 
-      # npm 11.5.1+ for OIDC; use an npmrc with registry only (no _authToken) so the CLI uses trusted publishing.
-      # Shell-unset NODE_AUTH_TOKEN in case org/repo env injects it — empty token + auth npmrc prevents OIDC.
+      # Verify OIDC is available before attempting publish.
+      # If "OIDC endpoint" prints "(not set)" the id-token permission is missing.
+      # If publish still gets ENEEDAUTH, the trusted publisher is not configured on npmjs.com.
+      - name: Verify OIDC environment
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          echo "Node:  $(node --version)"
+          echo "npm:   $(npm --version)"
+          echo "OIDC endpoint: ${ACTIONS_ID_TOKEN_REQUEST_URL:-(not set — id-token: write permission missing)}"
+
+      # npm 11.5.1+ required for OIDC trusted publishing.
+      # Write a clean npmrc (registry only, no _authToken) so npm uses OIDC instead of token auth.
       - name: Publish to npm (OIDC)
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: |
-          set -euo pipefail
-          NPMRC_OIDC="${RUNNER_TEMP}/npm-oidc-publish.rc"
-          printf '%s\n' 'registry=https://registry.npmjs.org/' > "${NPMRC_OIDC}"
-          export NPM_CONFIG_USERCONFIG="${NPMRC_OIDC}"
-          unset NODE_AUTH_TOKEN || true
+          printf 'registry=https://registry.npmjs.org/\n' > "$RUNNER_TEMP/.npmrc-oidc"
+          export NPM_CONFIG_USERCONFIG="$RUNNER_TEMP/.npmrc-oidc"
+          unset NODE_AUTH_TOKEN 2>/dev/null || true
           npx --yes npm@11.5.1 publish
 
       - name: Get version
