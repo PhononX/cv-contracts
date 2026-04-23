@@ -1,3 +1,7 @@
+# Publishes to npm using OIDC trusted publishing (no NPM_TOKEN).
+# Prerequisites: npmjs.com → package → Settings → Trusted Publisher:
+#   GitHub Actions → org/user: PhononX, repo: cv-contracts, workflow: npm-publish.yml
+# See: https://docs.npmjs.com/trusted-publishers/
 name: Build and Deploy into NPM
 
 on:
@@ -8,22 +12,31 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write # version bump commits + tags
+  id-token: write # OIDC for npm trusted publishing
+
 jobs:
   build-and-publish:
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        node-version: [18.x]
+        node-version: [22.x]
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Set up Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
+          registry-url: https://registry.npmjs.org
+
+      # Trusted publishing requires npm CLI >= 11.5.1 (bundled npm on Node 22 may be older)
+      - name: Ensure npm CLI for OIDC publishing
+        run: npm install -g npm@^11.5.1
 
       - name: Install dependencies
         run: npm install
@@ -32,6 +45,7 @@ jobs:
         run: npm run build
 
       - name: Bump version and push tag
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
@@ -40,28 +54,23 @@ jobs:
           npm version patch -m "Bump to %s [skip ci]"
           git push --follow-tags
 
-      - name: Configure npm for publishing
-        run: |
-          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
-
-      - name: Publish to npm
-        if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+      - name: Publish to npm (OIDC)
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: npm publish
 
       - name: Get version
         id: package
-        run: echo "::set-output name=version::$(jq -r .version package.json)"        
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: echo "version=$(jq -r .version package.json)" >> "$GITHUB_OUTPUT"
 
       - name: Create a GitHub release
-        if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
-        uses: actions/create-release@v1
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: softprops/action-gh-release@v2
         with:
           tag_name: v${{ steps.package.outputs.version }}
-          release_name: Release v${{ steps.package.outputs.version }}
+          name: Release v${{ steps.package.outputs.version }}
           body: |
             New release for version ${{ steps.package.outputs.version }}.
             - Built and published to npm
           draft: false
           prerelease: false
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
