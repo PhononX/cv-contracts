@@ -117,6 +117,12 @@ export const WebhookMessageSchema = {
     folder_id: {
       type: ['null', 'string'],
     },
+    conversation_id: {
+      type: ['null', 'string'],
+    },
+    conversation_sequence: {
+      type: ['null', 'number'],
+    },
   },
   additionalProperties: false,
   required: [
@@ -236,4 +242,6 @@ export enum WebhookMessageKeys {
   kind = 'kind',
   share_link_id = 'share_link_id',
   folder_id = 'folder_id',
+  conversation_id = 'conversation_id',
+  conversation_sequence = 'conversation_sequence',
 }

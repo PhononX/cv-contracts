@@ -52,4 +52,6 @@ export interface WebhookMessage {
   kind?: MessageKind | null;
   share_link_id?: string | null;
   folder_id?: string | null;
+  conversation_id?: string | null;
+  conversation_sequence?: number | null;
 }
