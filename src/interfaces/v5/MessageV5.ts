@@ -66,7 +66,13 @@ export interface MessageV5 {
   workspace_id: string;
   creator_id: string;
   status: MessageStatus;
+  /**
+   * @deprecated May be removed after 2026-11-01. Use `thread_id` instead.
+   */
   parent_message_id?: string | null;
+  /** Preferred thread identifier. Same type and optionality as `parent_message_id`. */
+  thread_id?: string | null;
+  idempotency_key?: string | null;
   attachments?: AttachmentV5[];
   language?: string | null;
   is_original_language?: boolean | null;

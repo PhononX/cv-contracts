@@ -146,8 +146,14 @@ export const AIPromptResponseSchema = {
           type: ['null', 'string'],
         },
         parent_message_id: {
+          type: ['null', 'string'],
+        },
+        thread_id: {
           description:
-            'Preferred parent message identifier. Same type and optionality as `parent_message_guid`.',
+            'Preferred thread identifier. Same type and optionality as `parent_message_id`.',
+          type: ['null', 'string'],
+        },
+        idempotency_key: {
           type: ['null', 'string'],
         },
         language: {

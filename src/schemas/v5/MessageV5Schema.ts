@@ -50,6 +50,14 @@ export const MessageV5Schema = {
     parent_message_id: {
       type: ['null', 'string'],
     },
+    thread_id: {
+      description:
+        'Preferred thread identifier. Same type and optionality as `parent_message_id`.',
+      type: ['null', 'string'],
+    },
+    idempotency_key: {
+      type: ['null', 'string'],
+    },
     attachments: {
       type: 'array',
       items: {
@@ -387,6 +395,8 @@ export enum MessageV5Keys {
   creator_id = 'creator_id',
   status = 'status',
   parent_message_id = 'parent_message_id',
+  thread_id = 'thread_id',
+  idempotency_key = 'idempotency_key',
   attachments = 'attachments',
   language = 'language',
   is_original_language = 'is_original_language',
