@@ -43,12 +43,7 @@ export interface WebhookMessage {
    * @deprecated May be removed after 2026-11-01. Use `parent_message_id` instead.
    */
   parent_message_guid?: string | null;
-  /**
-   * @deprecated May be removed after 2026-11-01. Use `thread_id` instead.
-   */
   parent_message_id?: string | null;
-  /** Preferred thread identifier. Same type and optionality as `parent_message_id`. */
-  thread_id?: string | null;
   idempotency_key?: string | null;
   language?: string | null;
   status: MessageStatus;

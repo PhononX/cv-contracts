@@ -148,11 +148,6 @@ export const AIPromptResponseSchema = {
         parent_message_id: {
           type: ['null', 'string'],
         },
-        thread_id: {
-          description:
-            'Preferred thread identifier. Same type and optionality as `parent_message_id`.',
-          type: ['null', 'string'],
-        },
         idempotency_key: {
           type: ['null', 'string'],
         },

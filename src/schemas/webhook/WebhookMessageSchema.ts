@@ -75,11 +75,6 @@ export const WebhookMessageSchema = {
     parent_message_id: {
       type: ['null', 'string'],
     },
-    thread_id: {
-      description:
-        'Preferred thread identifier. Same type and optionality as `parent_message_id`.',
-      type: ['null', 'string'],
-    },
     idempotency_key: {
       type: ['null', 'string'],
     },
@@ -241,7 +236,6 @@ export enum WebhookMessageKeys {
   reply_count = 'reply_count',
   parent_message_guid = 'parent_message_guid',
   parent_message_id = 'parent_message_id',
-  thread_id = 'thread_id',
   idempotency_key = 'idempotency_key',
   language = 'language',
   status = 'status',
