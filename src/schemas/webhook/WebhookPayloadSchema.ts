@@ -78,8 +78,6 @@ export const WebhookPayloadSchema = {
         'workspace.user.left',
         'workspace.user.removed',
         'workspace.findable-channel.created',
-        'access_token.expired',
-        'refresh_token.expired',
         'ai.prompt.response.generated',
         'action-item.created',
         'action-item.updated',

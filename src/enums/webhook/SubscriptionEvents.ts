@@ -34,10 +34,6 @@ export enum SubscriptionEvents {
   WORKSPACE_USER_REMOVED = 'workspace.user.removed',
   WORKSPACE_FINDABLE_CHANNEL_CREATED = 'workspace.findable-channel.created',
 
-  // Webhooks Events, users don't need to subscribe, every user that is subscribed to any event could get one of.
-  WEBHOOK_ACCESS_TOKEN_EXPIRED = 'access_token.expired',
-  WEBHOOK_REFRESH_TOKEN_EXPIRED = 'refresh_token.expired',
-
   // AI Events
   AI_PROMPT_RESPONSE_GENERATED = 'ai.prompt.response.generated',
 
