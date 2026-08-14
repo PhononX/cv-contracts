@@ -10,6 +10,8 @@ export enum SubscriptionEvents {
   MESSAGE_DELETED = 'message.deleted',
   MESSAGE_DISCUSSION_NOTES_ADDED = 'message.discussion-notes.added',
   MESSAGE_LABEL_ADDED = 'message.label.added',
+  MESSAGE_ATTACHMENT_ADDED = 'message.attachment.added',
+  MESSAGE_ATTACHMENT_UPLOADED = 'message.attachment.uploaded',
   MESSAGE_POSTED_TO_CHANNEL = 'message.posted.to.channel',
   MESSAGE_VOICEMEMO_CREATED = 'message.voicememo.created',
 

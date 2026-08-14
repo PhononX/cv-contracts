@@ -5,6 +5,7 @@ export * from './MessageType';
 export * from './LabelBehavior';
 export * from './LabelType';
 export * from './AttachmentType';
+export * from './AttachmentStatus';
 export * from './ElevenLabsSupportedLanguages';
 export * from './webhook';
 export * from './CreateConversationFromType';
