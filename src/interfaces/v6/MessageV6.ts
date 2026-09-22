@@ -54,7 +54,7 @@ export interface MessageV6 {
   utm_data?: UtmData | null;
   conversation_sequence?: number | null;
   source_message_id?: string | null;
-  audio?: MessageContent | null;
+  content?: MessageContent | null;
   users_caught_up?: MessageCaughtUpStatus | null;
   reaction_summary?: ReactionSummary | null;
   users_not_allowed_to_receive_notifications?:

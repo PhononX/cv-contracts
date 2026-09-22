@@ -108,7 +108,7 @@ export const MessageV6Schema = {
     source_message_id: {
       type: ['null', 'string'],
     },
-    audio: {
+    content: {
       anyOf: [
         {
           $ref: '#/definitions/MessageContent',
@@ -453,7 +453,7 @@ export enum MessageV6Keys {
   utm_data = 'utm_data',
   conversation_sequence = 'conversation_sequence',
   source_message_id = 'source_message_id',
-  audio = 'audio',
+  content = 'content',
   users_caught_up = 'users_caught_up',
   reaction_summary = 'reaction_summary',
   users_not_allowed_to_receive_notifications = 'users_not_allowed_to_receive_notifications',
