@@ -47,8 +47,10 @@ export const MessageV6Schema = {
     status: {
       $ref: '#/definitions/MessageStatus',
     },
-    parent_message_id: {
-      type: ['null', 'string'],
+    thread_id: {
+      description:
+        "The id of the message or its parent.  If it's not equal to id then it's a reply.",
+      type: 'string',
     },
     idempotency_key: {
       type: ['null', 'string'],
@@ -204,6 +206,7 @@ export const MessageV6Schema = {
     'link',
     'status',
     'tagged_user_ids',
+    'thread_id',
     'type',
     'updated_at',
     'workspace_id',
@@ -438,7 +441,7 @@ export enum MessageV6Keys {
   workspace_id = 'workspace_id',
   creator_id = 'creator_id',
   status = 'status',
-  parent_message_id = 'parent_message_id',
+  thread_id = 'thread_id',
   idempotency_key = 'idempotency_key',
   attachments = 'attachments',
   available_languages = 'available_languages',
