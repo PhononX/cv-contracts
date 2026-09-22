@@ -13,4 +13,5 @@ export * from './ResponseByLanguageSchema';
 export * from './UserSchema';
 export * from './WorkspaceSchema';
 export * from './v5';
+export * from './v6';
 export * from './webhook';

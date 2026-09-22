@@ -13,3 +13,4 @@ export * from './AIShareLinkPromptResponse';
 export * from './ActionItem';
 export * from './MessageShareLink';
 export * from './v5';
+export * from './v6';
