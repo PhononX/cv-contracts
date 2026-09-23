@@ -3,6 +3,9 @@ export const MessageContentSchema = {
     'Content of a message in one language: audio plus transcript data.',
   type: 'object',
   properties: {
+    id: {
+      type: 'string',
+    },
     ai_summary: {
       type: ['null', 'string'],
     },
@@ -42,6 +45,7 @@ export const MessageContentSchema = {
     },
   },
   additionalProperties: false,
+  required: ['id'],
   definitions: {
     MessageTimeCode: {
       type: 'object',
@@ -64,6 +68,7 @@ export const MessageContentSchema = {
 };
 
 export enum MessageContentKeys {
+  id = 'id',
   ai_summary = 'ai_summary',
   transcript = 'transcript',
   time_codes = 'time_codes',

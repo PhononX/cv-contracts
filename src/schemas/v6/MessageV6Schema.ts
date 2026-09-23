@@ -319,6 +319,9 @@ export const MessageV6Schema = {
         'Content of a message in one language: audio plus transcript data.',
       type: 'object',
       properties: {
+        id: {
+          type: 'string',
+        },
         ai_summary: {
           type: ['null', 'string'],
         },
@@ -358,6 +361,7 @@ export const MessageV6Schema = {
         },
       },
       additionalProperties: false,
+      required: ['id'],
     },
     MessageTimeCode: {
       type: 'object',

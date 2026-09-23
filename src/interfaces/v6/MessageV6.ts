@@ -16,6 +16,7 @@ import {
 
 /** Content of a message in one language: audio plus transcript data. */
 export interface MessageContent {
+  id: string;
   ai_summary?: string | null;
   transcript?: string | null;
   time_codes?: MessageTimeCode[];
@@ -58,8 +59,8 @@ export interface MessageV6 {
   users_caught_up?: MessageCaughtUpStatus | null;
   reaction_summary?: ReactionSummary | null;
   users_not_allowed_to_receive_notifications?:
-    | UserNotAllowedReceiveNotifications[]
-    | null;
+  | UserNotAllowedReceiveNotifications[]
+  | null;
   source?: MessageSource | null;
   source_value?: string | null;
   tagged_user_ids: string[];
