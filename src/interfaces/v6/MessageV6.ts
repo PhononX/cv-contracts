@@ -59,8 +59,8 @@ export interface MessageV6 {
   users_caught_up?: MessageCaughtUpStatus | null;
   reaction_summary?: ReactionSummary | null;
   users_not_allowed_to_receive_notifications?:
-  | UserNotAllowedReceiveNotifications[]
-  | null;
+    | UserNotAllowedReceiveNotifications[]
+    | null;
   source?: MessageSource | null;
   source_value?: string | null;
   tagged_user_ids: string[];
