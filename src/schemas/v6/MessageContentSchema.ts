@@ -4,7 +4,7 @@ export const MessageContentSchema = {
   type: 'object',
   properties: {
     id: {
-      type: 'string',
+      type: ['null', 'string'],
     },
     ai_summary: {
       type: ['null', 'string'],
@@ -45,7 +45,6 @@ export const MessageContentSchema = {
     },
   },
   additionalProperties: false,
-  required: ['id'],
   definitions: {
     MessageTimeCode: {
       type: 'object',

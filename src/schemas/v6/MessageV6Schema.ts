@@ -320,7 +320,7 @@ export const MessageV6Schema = {
       type: 'object',
       properties: {
         id: {
-          type: 'string',
+          type: ['null', 'string'],
         },
         ai_summary: {
           type: ['null', 'string'],
@@ -361,7 +361,6 @@ export const MessageV6Schema = {
         },
       },
       additionalProperties: false,
-      required: ['id'],
     },
     MessageTimeCode: {
       type: 'object',

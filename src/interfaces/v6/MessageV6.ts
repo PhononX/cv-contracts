@@ -16,7 +16,7 @@ import {
 
 /** Content of a message in one language: audio plus transcript data. */
 export interface MessageContent {
-  id: string;
+  id?: string | null;
   ai_summary?: string | null;
   transcript?: string | null;
   time_codes?: MessageTimeCode[];
