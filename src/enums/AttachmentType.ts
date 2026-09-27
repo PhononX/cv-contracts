@@ -5,4 +5,5 @@ export enum AttachmentType {
   AiResponseId = 'ai-response-id',
   AiPromptId = 'ai-prompt-id',
   ActionItemId = 'action-item-id',
+  AskId = 'ask-id',
 }
