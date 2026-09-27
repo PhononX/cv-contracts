@@ -129,6 +129,7 @@ export const WebhookPayloadSchema = {
         'WorkspaceLevelMessageLabelAdded',
         'ActionItem',
         'ChannelReminder',
+        'Ask',
       ],
     },
     Resource: {
