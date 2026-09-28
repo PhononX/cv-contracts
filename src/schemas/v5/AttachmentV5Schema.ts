@@ -44,6 +44,7 @@ export const AttachmentV5Schema = {
         'ai-response-id',
         'ai-prompt-id',
         'action-item-id',
+        'ask-id',
       ],
     },
   },

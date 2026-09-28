@@ -169,6 +169,7 @@ export const MessageSchema = {
         'ai-response-id',
         'ai-prompt-id',
         'action-item-id',
+        'ask-id',
       ],
     },
     MessageType: {

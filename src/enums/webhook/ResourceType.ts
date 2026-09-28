@@ -17,4 +17,5 @@ export enum ResourceType {
   WorkspaceLevelMessageLabelAdded = 'WorkspaceLevelMessageLabelAdded',
   ActionItem = 'ActionItem',
   ChannelReminder = 'ChannelReminder',
+  Ask = 'Ask',
 }
