@@ -20,3 +20,4 @@ export * from './MessageKind';
 export * from './MessageCaughtUpStatus';
 export * from './Direction';
 export * from './MessageSource';
+export * from './AudioDelivery';

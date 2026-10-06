@@ -118,6 +118,19 @@ export const MessageV6Schema = {
         },
       ],
     },
+    audio_delivery: {
+      description:
+        'Whether the audio was recorded as a live stream or uploaded as a recording.',
+      anyOf: [
+        {
+          enum: ['recording', 'streaming'],
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
+    },
     users_caught_up: {
       anyOf: [
         {
@@ -458,6 +471,7 @@ export enum MessageV6Keys {
   conversation_sequence = 'conversation_sequence',
   source_message_id = 'source_message_id',
   content = 'content',
+  audio_delivery = 'audio_delivery',
   users_caught_up = 'users_caught_up',
   reaction_summary = 'reaction_summary',
   users_not_allowed_to_receive_notifications = 'users_not_allowed_to_receive_notifications',
