@@ -119,17 +119,9 @@ export const MessageV6Schema = {
       ],
     },
     audio_delivery: {
+      $ref: '#/definitions/AudioDelivery',
       description:
         'Whether the audio was recorded as a live stream or uploaded as a recording.',
-      anyOf: [
-        {
-          enum: ['recording', 'streaming'],
-          type: 'string',
-        },
-        {
-          type: 'null',
-        },
-      ],
     },
     users_caught_up: {
       anyOf: [
@@ -213,6 +205,7 @@ export const MessageV6Schema = {
   },
   additionalProperties: false,
   required: [
+    'audio_delivery',
     'created_at',
     'creator_id',
     'id',
@@ -391,6 +384,10 @@ export const MessageV6Schema = {
       },
       additionalProperties: false,
       required: ['e', 's', 't'],
+    },
+    AudioDelivery: {
+      type: 'string',
+      enum: ['recording', 'streaming'],
     },
     ReactionSummary: {
       type: 'object',

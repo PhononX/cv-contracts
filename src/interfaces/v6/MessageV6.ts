@@ -58,7 +58,7 @@ export interface MessageV6 {
   source_message_id?: string | null;
   content?: MessageContent | null;
   /** Whether the audio was recorded as a live stream or uploaded as a recording. */
-  audio_delivery?: AudioDelivery | null;
+  audio_delivery: AudioDelivery;
   users_caught_up?: MessageCaughtUpStatus | null;
   reaction_summary?: ReactionSummary | null;
   users_not_allowed_to_receive_notifications?:
