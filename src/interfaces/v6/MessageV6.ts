@@ -35,7 +35,7 @@ export interface MessageContent {
 export interface MessageV6 {
   id: string;
   type: MessageType;
-  kind?: MessageKind | null;
+  kind: MessageKind;
   created_at: string;
   updated_at: string;
   deleted_at?: string | null;

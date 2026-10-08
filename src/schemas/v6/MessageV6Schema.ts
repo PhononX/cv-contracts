@@ -8,23 +8,7 @@ export const MessageV6Schema = {
       $ref: '#/definitions/MessageType',
     },
     kind: {
-      anyOf: [
-        {
-          enum: [
-            'action-item',
-            'ai-prompt',
-            'ai-response',
-            'attachment',
-            'audio',
-            'channel-reminder',
-            'text',
-          ],
-          type: 'string',
-        },
-        {
-          type: 'null',
-        },
-      ],
+      $ref: '#/definitions/MessageKind',
     },
     created_at: {
       type: 'string',
@@ -209,6 +193,7 @@ export const MessageV6Schema = {
     'created_at',
     'creator_id',
     'id',
+    'kind',
     'link',
     'status',
     'tagged_user_ids',
@@ -221,6 +206,18 @@ export const MessageV6Schema = {
     MessageType: {
       type: 'string',
       enum: ['channel', 'prerecorded', 'voicememo', 'stored', 'welcome'],
+    },
+    MessageKind: {
+      type: 'string',
+      enum: [
+        'audio',
+        'text',
+        'attachment',
+        'action-item',
+        'ai-prompt',
+        'ai-response',
+        'channel-reminder',
+      ],
     },
     MessageStatus: {
       type: 'string',
